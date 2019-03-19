@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return tableView
     }()
 
-    let bandCellId = "bandCellId"
+    let cellId = "cellId"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func setupTableView() {
         tableVIew.delegate = self
         tableVIew.dataSource = self
-        tableVIew.register(BandCell.self, forCellReuseIdentifier: bandCellId)
+        tableVIew.register(BandCell.self, forCellReuseIdentifier: cellId)
 
         view.addSubview(tableVIew)
         tableVIew.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
@@ -51,15 +51,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: bandCellId, for: indexPath) as! BandCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! BandCell
 //        cell.pictureImageView.image = UIImage(named: bandsArray[indexPath.item].image!)
-        cell.titleLabel.text = "Sample Title"
-
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 200
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
