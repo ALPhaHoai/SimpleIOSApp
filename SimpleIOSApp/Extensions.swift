@@ -10,12 +10,17 @@ extension UIView {
 
     func setCellShadow() {
         self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOffset = CGSize(width: 0, height: 0)
+        self.layer.shadowOffset = CGSize(width: 0, height: 3)
         self.layer.shadowOpacity = 0.3
-        self.layer.shadowRadius = 1.0
+        self.layer.shadowRadius = 2.0
         self.layer.masksToBounds = false
         self.clipsToBounds = false
         self.layer.cornerRadius = 3
+
+        self.layer.borderWidth = 1
+        self.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0.5)
+
+
     }
 
     func setAnchor(top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?,
@@ -83,7 +88,7 @@ extension UIView {
 public extension UIColor {
 
     public convenience init(r: CGFloat, g: CGFloat, b: CGFloat) {
-        self.init(red: r/255, green: g/255, blue: b/255, alpha: 1)
+        self.init(red: r / 255, green: g / 255, blue: b / 255, alpha: 1)
     }
 }
 
@@ -109,6 +114,8 @@ extension UIView {
 
         layer.addSublayer(border)
     }
+
+
 }
 
 extension UIView {
@@ -138,5 +145,33 @@ extension UIView {
         border.backgroundColor = color.cgColor
         border.frame = CGRect(x: 0, y: 0, width: width, height: self.frame.size.height)
         self.layer.addSublayer(border)
+    }
+}
+
+extension UIImage {
+    func resizeImage(targetSize: CGSize) -> UIImage {
+        let size = self.size
+
+        let widthRatio = targetSize.width / size.width
+        let heightRatio = targetSize.height / size.height
+
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if (widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio, height: size.height * widthRatio)
+        }
+
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        self.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage!
     }
 }

@@ -5,7 +5,13 @@
 
 import UIKit
 
-class BandCell: UITableViewCell {
+class TableCell: UITableViewCell {
+
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//
+//        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 30, right: 10))
+//    }
 
     let cellView: UIView = {
         let view = UIView()
@@ -29,7 +35,7 @@ class BandCell: UITableViewCell {
         let smallTextLabel = UILabel()
         smallTextLabel.text = text
         smallTextLabel.font = smallTextLabel.font.withSize(14)
-        smallTextLabel.textColor = .gray
+        smallTextLabel.textColor = #colorLiteral(red: 0.493902439, green: 0.5, blue: 0.5, alpha: 1)
         smallGroup.addSubview(smallTextLabel)
         smallTextLabel.snp.makeConstraints { maker -> Void in
             maker.leading.equalTo(smallImage.snp.trailing).offset(10)
@@ -44,7 +50,7 @@ class BandCell: UITableViewCell {
     func getLabelTitle(text: String) -> UILabel {
         let label = UILabel()
         label.text = text
-        label.textColor = UIColor.darkGray
+        label.textColor = #colorLiteral(red: 0.2548794746, green: 0.254914552, blue: 0.2548675537, alpha: 1)
         label.font = UIFont.boldSystemFont(ofSize: 18.0)
         return label
     }
@@ -72,7 +78,7 @@ class BandCell: UITableViewCell {
 
     func getGroupButton() -> UIView {
         let groupButton = UIView()
-        let button1 = getButton(text: "Button 1", bgColor: UIColor.red)
+        let button1 = getButton(text: "Button 1", bgColor: #colorLiteral(red: 0.7711191705, green: 0.1692700618, blue: 0.1692700618, alpha: 1))
 
         groupButton.addSubview(button1)
         button1.snp.makeConstraints { maker -> Void in
@@ -83,8 +89,8 @@ class BandCell: UITableViewCell {
 
         }
 
+        let button2 = getButton(text: "Button 2", bgColor: #colorLiteral(red: 0.7711191705, green: 0.1692700618, blue: 0.1692700618, alpha: 1))
 
-        let button2 = getButton(text: "Button 2", bgColor: UIColor.red)
         groupButton.addSubview(button2)
         button2.snp.makeConstraints { maker -> Void in
             maker.width.lessThanOrEqualTo(groupButton.snp.width).dividedBy(3)
@@ -94,7 +100,7 @@ class BandCell: UITableViewCell {
 
         }
 
-        let button3 = getButton(text: "Button 3", bgColor: UIColor.yellow)
+        let button3 = getButton(text: "Button 3", bgColor: #colorLiteral(red: 0.9477817358, green: 0.6893126696, blue: 0.007571336754, alpha: 1))
         groupButton.addSubview(button3)
         button3.snp.makeConstraints { maker -> Void in
             maker.width.lessThanOrEqualTo(groupButton.snp.width).dividedBy(3)
@@ -125,9 +131,23 @@ class BandCell: UITableViewCell {
         //clockTitleGroup
         let clockTitleGroup = UIView()
 
-        let clockImage = UIImageView(image: UIImage(named: "clock-title"))
-        clockImage.contentMode = .scaleAspectFit
+        let clockImage = UIImageView(image: UIImage(named: "clock-title")!.resizeImage(targetSize: CGSize(width: 15, height: 15)))
+        clockImage.contentMode = .center
+
         clockTitleGroup.addSubview(clockImage)
+
+        clockTitleGroup.layer.shadowColor = UIColor.black.cgColor
+        clockTitleGroup.layer.shadowOffset = CGSize(width: 0, height: 1)
+        clockTitleGroup.layer.shadowOpacity = 0.1
+        clockTitleGroup.layer.shadowRadius = 0.5
+        clockTitleGroup.layer.masksToBounds = false
+        clockTitleGroup.clipsToBounds = false
+        clockTitleGroup.layer.cornerRadius = 3
+
+        //clockTitleGroup.addBottomBorderWithColor(color: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0.5), width: 1.0)
+//        clockTitleGroup.layer.borderWidth = 1
+//        clockTitleGroup.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0.5)
+
         clockImage.snp.makeConstraints { maker -> Void in
             maker.leading.top.bottom.equalTo(clockTitleGroup)
         }
@@ -140,23 +160,21 @@ class BandCell: UITableViewCell {
             maker.leading.equalTo(clockImage.snp.trailing).offset(8)
             maker.top.bottom.equalTo(clockTitleGroup)
         }
+
+
         cellView.addSubview(clockTitleGroup)
+        clockTitleGroup.backgroundColor = #colorLiteral(red: 0.7630656732, green: 0.772486237, blue: 0.772486237, alpha: 0.3872139085)
         clockTitleGroup.snp.makeConstraints { maker -> Void in
-            maker.top.equalTo(cellView).offset(10)
+            maker.top.equalTo(cellView)
+            maker.leading.trailing.equalTo(cellView)
+            maker.height.equalTo(40)
         }
-
-        let lineView = SimpleLine()
-        cellView.addSubview(lineView)
-        lineView.snp.makeConstraints { maker -> Void in
-            maker.top.equalTo(clockTitleGroup.snp.bottom)
-        }
-
 
         let rectangle = UIView()
         cellView.addSubview(rectangle)
         rectangle.snp.makeConstraints { maker -> Void in
             maker.bottom.trailing.leading.equalTo(cellView)
-            maker.top.equalTo(lineView.snp.bottom)
+            maker.top.equalTo(clockTitleGroup.snp.bottom)
         }
 
         let content = UIView()
@@ -168,7 +186,7 @@ class BandCell: UITableViewCell {
 
         let leftUIView = UIView()
 
-        let markerCircleRedList = UIImageView(image: UIImage(named: "marker-circle-red-list"))
+        let markerCircleRedList = UIImageView(image: UIImage(named: "marker-circle-red-list")!.resizeImage(targetSize: CGSize(width: 12, height: 12)))
 
         markerCircleRedList.contentMode = .scaleAspectFit
         leftUIView.addSubview(markerCircleRedList);
@@ -177,7 +195,7 @@ class BandCell: UITableViewCell {
             maker.centerX.equalTo(leftUIView.snp.centerX)
         }
 
-        let markerMapDetail = UIImageView(image: UIImage(named: "marker-map-detail"))
+        let markerMapDetail = UIImageView(image: UIImage(named: "marker-map-detail")!.resizeImage(targetSize: CGSize(width: 15, height: 15)))
         markerMapDetail.contentMode = .scaleAspectFit
         leftUIView.addSubview(markerMapDetail);
         markerMapDetail.snp.makeConstraints { maker -> Void in
@@ -278,7 +296,8 @@ class BandCell: UITableViewCell {
     }
 
 }
-public class SimpleLine: UIView  {
+
+public class SimpleLine: UIView {
 
     public init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
@@ -290,7 +309,9 @@ public class SimpleLine: UIView  {
     }
 
     public override func draw(_ rect: CGRect) {
-        guard let context = UIGraphicsGetCurrentContext() else { return }
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return
+        }
         context.setLineWidth(4.0)
         context.setStrokeColor(UIColor.darkGray.cgColor)
         context.move(to: CGPoint(x: 40, y: 40))
