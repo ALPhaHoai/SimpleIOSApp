@@ -8,20 +8,7 @@ import UIKit
 
 extension UIView {
 
-    func setCellShadow() {
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOffset = CGSize(width: 0, height: 3)
-        self.layer.shadowOpacity = 0.3
-        self.layer.shadowRadius = 2.0
-        self.layer.masksToBounds = false
-        self.clipsToBounds = false
-        self.layer.cornerRadius = 3
 
-        self.layer.borderWidth = 1
-        self.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0.5)
-
-
-    }
 
     func setAnchor(top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?,
                    bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?,

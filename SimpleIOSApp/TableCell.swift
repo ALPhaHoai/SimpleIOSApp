@@ -4,27 +4,55 @@
 //
 
 import UIKit
+import SnapKit
 
 class TableCell: UITableViewCell {
 
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//
-//        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 30, right: 10))
-//    }
+
+    //adding spacing between table cell
+    override open var frame: CGRect {
+        get {
+            return super.frame
+        }
+        set(newFrame) {
+            var frame = newFrame
+            frame.origin.y += 10
+            frame.origin.x += 10
+            frame.size.height -= 9
+            frame.size.width -= 2 * 10
+            super.frame = frame
+        }
+    }
+
+    override open func awakeFromNib() {
+        super.awakeFromNib()
+        layer.cornerRadius = 15
+        layer.masksToBounds = false
+    }
 
     let cellView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white
-        view.setCellShadow()
+
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOffset = CGSize(width: 0, height: 3)
+        view.layer.shadowOpacity = 0.2
+        view.layer.shadowRadius = 1.0
+        view.layer.masksToBounds = false
+        view.clipsToBounds = false
+        view.layer.cornerRadius = 3
+
+        view.layer.borderWidth = 1
+        view.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0.5)
+
         return view
     }()
 
 
-    func getSmallGroupIconText(icon: String, text: String) -> UIView {
+    func getSmallGroupIconText(icon: UIImage, text: String) -> UIView {
         let smallGroup = UIView()
 
-        let smallImage = UIImageView(image: UIImage(named: icon))
+        let smallImage = UIImageView(image: icon)
         smallImage.contentMode = .scaleAspectFit
         smallGroup.addSubview(smallImage)
         smallImage.snp.makeConstraints { maker -> Void in
@@ -131,10 +159,12 @@ class TableCell: UITableViewCell {
         //clockTitleGroup
         let clockTitleGroup = UIView()
 
-        let clockImage = UIImageView(image: UIImage(named: "clock-title")!.resizeImage(targetSize: CGSize(width: 15, height: 15)))
+        let clockImage = UIImageView(image: #imageLiteral(resourceName: "clock-title").resizeImage(targetSize: CGSize(width: 15, height: 15)))
         clockImage.contentMode = .center
-
         clockTitleGroup.addSubview(clockImage)
+        clockImage.snp.makeConstraints { maker -> Void in
+            maker.leading.top.bottom.equalTo(clockTitleGroup)
+        }
 
         clockTitleGroup.layer.shadowColor = UIColor.black.cgColor
         clockTitleGroup.layer.shadowOffset = CGSize(width: 0, height: 1)
@@ -144,13 +174,9 @@ class TableCell: UITableViewCell {
         clockTitleGroup.clipsToBounds = false
         clockTitleGroup.layer.cornerRadius = 3
 
-        //clockTitleGroup.addBottomBorderWithColor(color: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0.5), width: 1.0)
-//        clockTitleGroup.layer.borderWidth = 1
-//        clockTitleGroup.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0.5)
+        clockTitleGroup.layer.borderWidth = 1
+        clockTitleGroup.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0.5)
 
-        clockImage.snp.makeConstraints { maker -> Void in
-            maker.leading.top.bottom.equalTo(clockTitleGroup)
-        }
         let clockTitleText = UILabel()
         clockTitleText.text = "2018/10/30"
         clockTitleText.font = clockTitleText.font.withSize(14)
@@ -186,7 +212,7 @@ class TableCell: UITableViewCell {
 
         let leftUIView = UIView()
 
-        let markerCircleRedList = UIImageView(image: UIImage(named: "marker-circle-red-list")!.resizeImage(targetSize: CGSize(width: 12, height: 12)))
+        let markerCircleRedList = UIImageView(image: #imageLiteral(resourceName: "marker-circle-red-list").resizeImage(targetSize: CGSize(width: 12, height: 12)))
 
         markerCircleRedList.contentMode = .scaleAspectFit
         leftUIView.addSubview(markerCircleRedList);
@@ -195,7 +221,7 @@ class TableCell: UITableViewCell {
             maker.centerX.equalTo(leftUIView.snp.centerX)
         }
 
-        let markerMapDetail = UIImageView(image: UIImage(named: "marker-map-detail")!.resizeImage(targetSize: CGSize(width: 15, height: 15)))
+        let markerMapDetail = UIImageView(image: #imageLiteral(resourceName: "marker-map-detail").resizeImage(targetSize: CGSize(width: 15, height: 15)))
         markerMapDetail.contentMode = .scaleAspectFit
         leftUIView.addSubview(markerMapDetail);
         markerMapDetail.snp.makeConstraints { maker -> Void in
@@ -203,7 +229,7 @@ class TableCell: UITableViewCell {
             //maker.bottom.equalTo(leftUIView.snp.bottom)
         }
 
-        let lineDot = UIImageView(image: UIImage(named: "line-dot"))
+        let lineDot = UIImageView(image: #imageLiteral(resourceName: "line-dot"))
         lineDot.contentMode = .scaleAspectFit
         leftUIView.addSubview(lineDot);
         lineDot.snp.makeConstraints { maker -> Void in
@@ -241,18 +267,18 @@ class TableCell: UITableViewCell {
             maker.leading.equalTo(rightContent.snp.leading).offset(20)
         }
 
-        let smallGroupIconText1 = getSmallGroupIconText(icon: "clock-detail", text: "2018/10/30 10:00")
+        let smallGroupIconText1 = getSmallGroupIconText(icon: #imageLiteral(resourceName: "marker-map-detail"), text: "2018/10/30 10:00")
         smallTextandIconGroup.addSubview(smallGroupIconText1)
         smallGroupIconText1.snp.makeConstraints { maker -> Void in
             maker.top.equalTo(smallTextandIconGroup)
         }
 
-        let smallGroupIconText2 = getSmallGroupIconText(icon: "dropbox-detail", text: "Abcabc123")
+        let smallGroupIconText2 = getSmallGroupIconText(icon: #imageLiteral(resourceName: "dropbox-detail"), text: "Abcabc123")
         smallTextandIconGroup.addSubview(smallGroupIconText2)
         smallGroupIconText2.snp.makeConstraints { maker -> Void in
             maker.top.equalTo(smallGroupIconText1.snp.bottom).offset(5)
         }
-        let smallGroupIconText3 = getSmallGroupIconText(icon: "phone-detail", text: "0988 123 1231")
+        let smallGroupIconText3 = getSmallGroupIconText(icon: #imageLiteral(resourceName: "marker-map-detail"), text: "0988 123 1231")
         smallTextandIconGroup.addSubview(smallGroupIconText3)
         smallGroupIconText3.snp.makeConstraints { maker -> Void in
             maker.top.equalTo(smallGroupIconText2.snp.bottom).offset(5)
