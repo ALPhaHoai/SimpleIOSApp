@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bf8238e-8554-4de1-8e50-6e68dc44df9b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SimpleIOSApp/MyMapVC.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimpleIOSApp.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleIOSApp.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimpleIOSApp/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleIOSApp/AppDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimpleIOSApp/Extensions.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleIOSApp/Extensions.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimpleIOSApp/TableCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleIOSApp/TableCell.swift" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +10,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_159FC675-6F6E-4DBC-87D9-EB13F049FD0E" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_E80B2F88-BA2E-4A91-90A9-800E05942DF9" />
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
@@ -24,7 +19,7 @@
             <entry file="file://$PROJECT_DIR$/SimpleIOSApp/TableCell.swift">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="160">
-                  <caret line="284" lean-forward="true" selection-start-line="284" selection-end-line="284" />
+                  <caret line="284" selection-start-line="284" selection-end-line="284" />
                   <folding>
                     <element signature="e#105#117#0" expanded="true" />
                   </folding>
@@ -35,7 +30,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SimpleIOSApp/MyMapVC.swift">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="669">
+                <state relative-caret-position="1185">
                   <caret line="81" column="9" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
                   <folding>
                     <element signature="e#105#122#0" expanded="true" />
@@ -47,8 +42,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SimpleIOSApp/AppDelegate.swift">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="25" column="46" lean-forward="true" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+                <state relative-caret-position="375">
+                  <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
                 </state>
               </provider>
             </entry>
@@ -56,8 +51,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SimpleIOSApp/Extensions.swift">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="505">
-                  <caret line="196" lean-forward="true" selection-start-line="196" selection-end-line="196" />
+                <state relative-caret-position="2940">
+                  <caret line="196" selection-start-line="196" selection-end-line="196" />
                 </state>
               </provider>
             </entry>
@@ -65,12 +60,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/SimpleIOSApp/MyMapVC.swift">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="166" lean-forward="true" selection-start-line="166" selection-end-line="166" />
+                <state relative-caret-position="67">
+                  <caret line="130" column="22" selection-start-line="130" selection-start-column="22" selection-end-line="130" selection-end-column="22" />
                   <folding>
                     <element signature="e#105#122#0" expanded="true" />
                   </folding>
@@ -255,6 +250,8 @@
       <workItem from="1553243015011" duration="6428000" />
       <workItem from="1553564163415" duration="11683000" />
       <workItem from="1553582218360" duration="10387000" />
+      <workItem from="1553593862444" duration="189000" />
+      <workItem from="1553594918737" duration="1284000" />
     </task>
     <task id="LOCAL-00001" summary="draw cell content">
       <created>1552984738359</created>
@@ -323,7 +320,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73741000" />
+    <option name="totallyTimeSpent" value="75214000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1459" height="989" extended-state="0" />
@@ -335,16 +332,16 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32998884" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.25083613" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25083613" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39910814" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32998884" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32998884" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32998884" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32998884" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.2575251" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -561,22 +558,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleIOSApp/RightViewController.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="e#148#160#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleIOSApp/MyMapVC.m">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleIOSApp/MyMapVC.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleIOSApp/RightViewController.swift" />
+    <entry file="file://$PROJECT_DIR$/SimpleIOSApp/MyMapVC.m" />
+    <entry file="file://$PROJECT_DIR$/SimpleIOSApp/MyMapVC.h" />
     <entry file="file://$PROJECT_DIR$/SimpleIOSApp/MainTabBarController.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="446">
@@ -591,36 +575,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleIOSApp/Extensions.swift">
+    <entry file="file://$PROJECT_DIR$/SimpleIOSApp/TableCell.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="196" lean-forward="true" selection-start-line="196" selection-end-line="196" />
+        <state relative-caret-position="160">
+          <caret line="284" selection-start-line="284" selection-end-line="284" />
+          <folding>
+            <element signature="e#105#117#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SimpleIOSApp/AppDelegate.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="25" column="46" lean-forward="true" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+        <state relative-caret-position="375">
+          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleIOSApp/Extensions.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2940">
+          <caret line="196" selection-start-line="196" selection-end-line="196" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SimpleIOSApp/MyMapVC.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="81" column="9" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
+        <state relative-caret-position="67">
+          <caret line="130" column="22" selection-start-line="130" selection-start-column="22" selection-end-line="130" selection-end-column="22" />
           <folding>
             <element signature="e#105#122#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleIOSApp/TableCell.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="284" lean-forward="true" selection-start-line="284" selection-end-line="284" />
-          <folding>
-            <element signature="e#105#117#0" expanded="true" />
           </folding>
         </state>
       </provider>
