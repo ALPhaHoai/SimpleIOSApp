@@ -34,9 +34,6 @@ class MainTabBarController: UITabBarController {
         tabFrame.origin.y = self.view.frame.origin.y
         self.tabBar.frame = tabFrame
 
-        //self.tabBar.directionalLayoutMargins = NSDirectionalEdgeInsets(top: self.tabBar.directionalLayoutMargins.top, leading: self.tabBar.directionalLayoutMargins.leading, bottom: -20, trailing: self.tabBar.directionalLayoutMargins.trailing)
-
-
         self.tabBar.backgroundColor = UIColor.white
         self.tabBar.tintColor = UIColor.black
         self.tabBar.unselectedItemTintColor = #colorLiteral(red: 0.8117018342, green: 0.8118000031, blue: 0.8116685748, alpha: 1)
@@ -54,14 +51,14 @@ class MainTabBarController: UITabBarController {
 
 
     private func setUpTabBar() {
-        let leftVC = LeftViewController()
+        let leftVC = MyTableVC()
         leftVC.title = "Left View"
-        leftVC.tableView.contentInset.top = self.tabBar.frame.height
+        leftVC.tableView.contentInset.top = self.tabBar.frame.height + leftVC.titlePanel.frame.height  + 30
 
 
-        let rightVC = RightViewController()
+        let rightVC = MyTableVC()
         rightVC.title = "Right View"
-//        rightVC.tableView.contentInset.top = self.tabBar.frame.height
+        rightVC.tableView.contentInset.top = self.tabBar.frame.height + rightVC.titlePanel.frame.height  + 30
 
         self.viewControllers = [leftVC, rightVC]
 

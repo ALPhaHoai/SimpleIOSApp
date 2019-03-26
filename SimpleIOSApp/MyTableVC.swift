@@ -1,5 +1,5 @@
 //
-//  LeftViewController.swift
+//  MyTableVC.swift
 //  SwiftIOS_EUP_Test1
 //
 //  Created by Bruce on 2019-03-11.
@@ -9,12 +9,15 @@
 import UIKit
 import SnapKit
 
-class LeftViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MyTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
+
+
+
         return tableView
     }()
     let titlePanel: UIView = {
@@ -23,21 +26,32 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
         //add uilabel
         let textLabel = UILabel()
         textLabel.text = "Text Label"
+        textLabel.textColor = UIColor.black
 
         titlePanel.addSubview(textLabel)
 
 
         //add datepicker
         let datePicker = UIButton()
-        datePicker.setTitle("20/01/2019", for: .normal)
+        datePicker.setTitle("20/01/2019                  ▼", for: .normal)
+        datePicker.setTitleColor(UIColor.black, for: .normal)
         datePicker.layer.borderWidth = 1
+        datePicker.titleLabel!.font = UIFont.systemFont(ofSize: 13)
+
         datePicker.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0.5)
         titlePanel.addSubview(datePicker)
+
+        datePicker.contentEdgeInsets =  UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+
+
+
         datePicker.snp.makeConstraints { maker -> Void in
             maker.trailing.equalTo(titlePanel.snp.trailing)
+            maker.centerY.equalTo(titlePanel.snp.centerY)
         }
         textLabel.snp.makeConstraints { maker -> Void in
-            maker.trailing.equalTo(titlePanel.snp.leading)
+            maker.trailing.equalTo(datePicker.snp.leading).offset(-20)
+            maker.centerY.equalTo(titlePanel.snp.centerY)
         }
 
 
@@ -60,11 +74,6 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGray,
                                                                    NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
-//        view.addSubview(titlePanel)
-//        titlePanel.snp.makeConstraints { maker in
-//            maker.leading.trailing.top.equalTo(view)
-//
-//        }
     }
 
     func setupTableView() {
@@ -74,11 +83,16 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         view.addSubview(tableView)
 
+        tableView.tableHeaderView = titlePanel
+        titlePanel.layoutMargins = UIEdgeInsets(top: 100, left: 10, bottom: 10, right: 10);
+
 
         tableView.snp.makeConstraints { maker in
             maker.edges.equalTo(view)
-//            maker.leading.trailing.equalTo(view)
-//            maker.top.equalTo(titlePanel.snp.bottom)
+        }
+        titlePanel.snp.makeConstraints { maker in
+            maker.trailing.equalTo(view.snp.trailing).offset(-18)
+            maker.bottom.equalTo(tableView.snp.top).offset(-13)
         }
     }
 
