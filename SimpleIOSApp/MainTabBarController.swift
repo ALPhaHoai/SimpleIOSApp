@@ -56,9 +56,12 @@ class MainTabBarController: UITabBarController {
     private func setUpTabBar() {
         let leftVC = LeftViewController()
         leftVC.title = "Left View"
+        leftVC.tableView.contentInset.top = self.tabBar.frame.height
+
 
         let rightVC = RightViewController()
         rightVC.title = "Right View"
+//        rightVC.tableView.contentInset.top = self.tabBar.frame.height
 
         self.viewControllers = [leftVC, rightVC]
 

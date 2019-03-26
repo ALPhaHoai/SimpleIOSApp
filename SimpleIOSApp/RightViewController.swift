@@ -90,14 +90,6 @@ class RightViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
 
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 200
-//    }
-
-
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "01-01-2019"
-//    }
 
 }
 

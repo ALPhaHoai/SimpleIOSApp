@@ -11,7 +11,7 @@ import SnapKit
 
 class LeftViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let tableVIew: UITableView = {
+    let tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
@@ -68,12 +68,14 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func setupTableView() {
-        tableVIew.delegate = self
-        tableVIew.dataSource = self
-        tableVIew.register(TableCell.self, forCellReuseIdentifier: cellId)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(TableCell.self, forCellReuseIdentifier: cellId)
 
-        view.addSubview(tableVIew)
-        tableVIew.snp.makeConstraints { maker in
+        view.addSubview(tableView)
+
+
+        tableView.snp.makeConstraints { maker in
             maker.edges.equalTo(view)
 //            maker.leading.trailing.equalTo(view)
 //            maker.top.equalTo(titlePanel.snp.bottom)
