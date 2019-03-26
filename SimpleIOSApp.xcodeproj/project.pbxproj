@@ -16,6 +16,7 @@
 		59A95276D7B2FC80ABB209F7 /* MyTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A959790A4BAC992228A49E /* MyTableVC.swift */; };
 		59A9575A08034FCC5A3600F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A9574C49826418C87538A9 /* AppDelegate.swift */; };
 		59A957DC6EBE931BB2E02D64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A9526197ACA5C1DAA19215 /* LaunchScreen.storyboard */; };
+		59A9584E9230318515F3F8B9 /* MyMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A95C6AB0019A5D8AD1A487 /* MyMapVC.swift */; };
 		59A95D384F1A1FC243886321 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A95767C08C097591FA06B9 /* Assets.xcassets */; };
 		59A95F70DAB2E45B7766D56D /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A957953A4E022019BA5126 /* TableCell.swift */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,7 @@
 		59A95AADB293BE5DBFA937F9 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		59A95B43ACE3F7D8D02BD068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59A95C0BAD3CF1EE4A698A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		59A95C6AB0019A5D8AD1A487 /* MyMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMapVC.swift; sourceTree = "<group>"; };
 		59A95FEF819A60839B9A540C /* SimpleIOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleIOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 				59A95AADB293BE5DBFA937F9 /* Extensions.swift */,
 				59A957953A4E022019BA5126 /* TableCell.swift */,
 				59A952051E208D2D26FCE998 /* MainTabBarController.swift */,
+				59A95C6AB0019A5D8AD1A487 /* MyMapVC.swift */,
 			);
 			path = SimpleIOSApp;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				59A9526DFFDE0B742C85A3E6 /* Extensions.swift in Sources */,
 				59A95F70DAB2E45B7766D56D /* TableCell.swift in Sources */,
 				59A95047FA214D5A659A3755 /* MainTabBarController.swift in Sources */,
+				59A9584E9230318515F3F8B9 /* MyMapVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

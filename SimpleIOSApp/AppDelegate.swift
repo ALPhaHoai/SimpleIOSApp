@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = maintabBarController
+        window?.rootViewController = MyMapVC()
 
 
         if let font = UIFont(name: "Helvetica", size: 18.0) {

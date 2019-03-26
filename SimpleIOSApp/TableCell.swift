@@ -75,9 +75,10 @@ class TableCell: UITableViewCell {
     }
 
 
-    func getLabelTitle(text: String) -> UILabel {
+    func  getLabelTitle(text: String) -> UILabel {
         let label = UILabel()
         label.text = text
+        label.padding = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         label.textColor = #colorLiteral(red: 0.2548794746, green: 0.254914552, blue: 0.2548675537, alpha: 1)
         label.font = UIFont.boldSystemFont(ofSize: 18.0)
         return label
@@ -243,7 +244,7 @@ class TableCell: UITableViewCell {
             maker.leading.equalTo(content.snp.leading).offset(10)
             maker.centerY.equalTo(content.snp.centerY)
             maker.width.equalTo(20)
-            maker.height.equalTo(content.snp.height).multipliedBy(0.8)
+            maker.height.lessThanOrEqualTo(content.snp.height).multipliedBy(0.8)
         }
 
         let rightContent = UIView();
@@ -260,17 +261,55 @@ class TableCell: UITableViewCell {
         }
 
 
-        let smallTextandIconGroup = UIView()
-        rightContent.addSubview(smallTextandIconGroup)
+        let smallTextandIconGroup = getSmallTextandIconGroup(parentView: rightContent)
         smallTextandIconGroup.snp.makeConstraints { maker -> Void in
-            maker.top.equalTo(topTitleLabel.snp.bottom).offset(10)
+            maker.top.equalTo(topTitleLabel.snp.bottom)
             maker.leading.equalTo(rightContent.snp.leading).offset(20)
         }
+
+
+        let bottomTitleLabel = getLabelTitle(text: "This is bottom title label")
+        rightContent.addSubview(bottomTitleLabel)
+        bottomTitleLabel.snp.makeConstraints { maker -> Void in
+            maker.top.equalTo(smallTextandIconGroup.snp.bottom)
+        }
+
+
+        let groupButton = getGroupButton()
+        rectangle.addSubview(groupButton)
+        groupButton.snp.makeConstraints { maker -> Void in
+            maker.top.equalTo(content.snp.bottom).offset(10)
+            maker.bottom.equalTo(rectangle.snp.bottom).offset(-10)
+            maker.trailing.equalTo(rectangle.snp.trailing).offset(-10)
+        }
+
+
+        markerCircleRedList.snp.makeConstraints { maker -> Void in
+            maker.top.equalToSuperview().offset(10)
+        }
+
+        markerMapDetail.snp.makeConstraints { maker -> Void in
+            maker.centerY.lessThanOrEqualTo(bottomTitleLabel.snp.centerY)
+        }
+
+        clockImage.snp.makeConstraints { maker -> Void in
+            maker.centerX.equalTo(leftUIView.snp.centerX)
+        }
+
+        cellView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 4, paddingLeft: 8, paddingBottom: 4, paddingRight: 8)
+
+    }
+
+    func getSmallTextandIconGroup(parentView: UIView) -> UIView {
+        let maginTopBottom = 0
+        let smallTextandIconGroup = UIView()
+        parentView.addSubview(smallTextandIconGroup)
+
 
         let smallGroupIconText1 = getSmallGroupIconText(icon: #imageLiteral(resourceName: "clock-detail"), text: "2018/10/30 10:00")
         smallTextandIconGroup.addSubview(smallGroupIconText1)
         smallGroupIconText1.snp.makeConstraints { maker -> Void in
-            maker.top.equalTo(smallTextandIconGroup)
+            maker.top.equalTo(smallTextandIconGroup).offset(maginTopBottom)
         }
 
         let smallGroupIconText2 = getSmallGroupIconText(icon: #imageLiteral(resourceName: "dropbox-detail"), text: "Abcabc123")
@@ -282,38 +321,9 @@ class TableCell: UITableViewCell {
         smallTextandIconGroup.addSubview(smallGroupIconText3)
         smallGroupIconText3.snp.makeConstraints { maker -> Void in
             maker.top.equalTo(smallGroupIconText2.snp.bottom).offset(5)
+            maker.bottom.equalTo(smallTextandIconGroup.snp.bottom).offset(-maginTopBottom)
         }
-
-
-        let bottomTitleLabel = getLabelTitle(text: "This is bottom title label")
-        rightContent.addSubview(bottomTitleLabel)
-        bottomTitleLabel.snp.makeConstraints { maker -> Void in
-            maker.top.equalTo(smallGroupIconText3).offset(20)
-        }
-
-
-        let groupButton = getGroupButton()
-        rectangle.addSubview(groupButton)
-        groupButton.snp.makeConstraints { maker -> Void in
-            maker.top.equalTo(content.snp.bottom)
-            maker.bottom.equalTo(rectangle.snp.bottom).offset(-10)
-            maker.trailing.equalTo(rectangle.snp.trailing).offset(-10)
-        }
-
-
-        markerCircleRedList.snp.makeConstraints { maker -> Void in
-            maker.centerY.equalTo(topTitleLabel.snp.centerY)
-        }
-        markerMapDetail.snp.makeConstraints { maker -> Void in
-            maker.centerY.equalTo(bottomTitleLabel.snp.centerY)
-        }
-
-        clockImage.snp.makeConstraints { maker -> Void in
-            maker.centerX.equalTo(leftUIView.snp.centerX)
-        }
-
-        cellView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 4, paddingLeft: 8, paddingBottom: 4, paddingRight: 8)
-
+        return smallTextandIconGroup
     }
 
     required init?(coder aDecoder: NSCoder) {
