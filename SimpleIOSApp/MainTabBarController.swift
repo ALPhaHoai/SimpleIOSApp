@@ -16,7 +16,16 @@ class MainTabBarController: UITabBarController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         customTabBar()
+       customUITableView()
 
+    }
+
+
+    private func customUITableView() {
+        //move tabbar to the top
+//        var leftVCFrame: CGRect = self.leftVC.view.frame
+//        leftVCFrame.origin.y = self.tabBar.frame.origin.y
+//        self.leftVC.view.frame = leftVCFrame
     }
 
     private func customTabBar() {
@@ -37,28 +46,21 @@ class MainTabBarController: UITabBarController {
         let numberOfItems = CGFloat(self.tabBar.items!.count)
         let tabBarItemSize = CGSize(width: self.tabBar.frame.width / numberOfItems, height: 4)
 
-        let selectedUnderline = getImageWithColorPosition(color: #colorLiteral(red: 0.7711191705, green: 0.1692700618, blue: 0.1692700618, alpha: 1), size: CGSize(width: tabBarItemSize.width, height: 84), lineSize: tabBarItemSize)
-        let unselectedUnderline = getImageWithColorPosition(color: UIColor.lightGray, size: CGSize(width: tabBarItemSize.width, height: 90), lineSize: CGSize(width: tabBarItemSize.width, height: tabBarItemSize.height))
+        let selectedUnderline = getImageWithColorPosition(color: #colorLiteral(red: 0.7711191705, green: 0.1692700618, blue: 0.1692700618, alpha: 1), size: CGSize(width: tabBarItemSize.width, height: tabFrame.height), lineSize: tabBarItemSize)
+        let unselectedUnderline = getImageWithColorPosition(color: UIColor.lightGray, size: CGSize(width: tabBarItemSize.width, height: tabFrame.height), lineSize: CGSize(width: tabBarItemSize.width, height: tabBarItemSize.height))
         self.tabBar.selectionIndicatorImage = selectedUnderline
         self.tabBar.backgroundImage = unselectedUnderline
-
-
     }
 
 
     private func setUpTabBar() {
         let leftVC = LeftViewController()
-//        let leftVC = UINavigationController(rootViewController: LeftViewController())
         leftVC.title = "Left View"
 
         let rightVC = RightViewController()
-//        let rightVC =  UINavigationController(rootViewController: RightViewController())
         rightVC.title = "Right View"
 
         self.viewControllers = [leftVC, rightVC]
-
-
-
 
     }
     func getImageWithColorPosition(color: UIColor, size: CGSize, lineSize: CGSize) -> UIImage {

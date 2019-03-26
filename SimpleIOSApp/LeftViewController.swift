@@ -90,7 +90,6 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TableCell
-//        cell.pictureImageView.image = UIImage(named: bandsArray[indexPath.item].image!)
         return cell
     }
 

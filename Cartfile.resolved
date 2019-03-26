@@ -1,0 +1,4 @@
+github "EndouMari/TabPageViewController" "0.2.7"
+github "SnapKit/SnapKit" "4.2.0"
+github "fortmarek/SwipeViewController" "1.1.1"
+github "xmartlabs/XLPagerTabStrip" "8.1.1"

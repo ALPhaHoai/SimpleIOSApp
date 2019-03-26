@@ -1,0 +1,9 @@
+{
+  "commitish" : "1.1.1",
+  "iOS" : [
+    {
+      "name" : "SwipeViewController",
+      "hash" : "f8d383dbed837ed49a02a0a0de8f0c677ea5bc2db6c3311d0dfeee444a4008dc"
+    }
+  ]
+}

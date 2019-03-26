@@ -312,7 +312,6 @@ class TableCell: UITableViewCell {
             maker.centerX.equalTo(leftUIView.snp.centerX)
         }
 
-
         cellView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 4, paddingLeft: 8, paddingBottom: 4, paddingRight: 8)
 
     }

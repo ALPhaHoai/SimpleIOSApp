@@ -1,0 +1,9 @@
+{
+  "commitish" : "0.2.7",
+  "iOS" : [
+    {
+      "name" : "TabPageViewController",
+      "hash" : "c60907a67d7bbcfe18304291bf5f2c26c8ba5372c6a3537c8305374b824b1c3b"
+    }
+  ]
+}
