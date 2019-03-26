@@ -26,26 +26,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.rootViewController = maintabBarController
-        
-        
-        //add underline to uitabbaritem
-        UITabBar.appearance().selectionIndicatorImage = getImageWithColorPosition(color: #colorLiteral(red: 0.7711191705, green: 0.1692700618, blue: 0.1692700618, alpha: 1), size: CGSize(width: (self.window?.frame.size.width)! / 2, height: 90), lineSize: CGSize(width: (self.window?.frame.size.width)! / 2, height: 4))
+
+
+        if let font = UIFont(name: "Helvetica", size: 18.0) {
+            UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+        }
+        UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -6.0)
+
+
 
         return true
-    }
-
-
-    func getImageWithColorPosition(color: UIColor, size: CGSize, lineSize: CGSize) -> UIImage {
-        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        let rectLine = CGRect(x: 0, y: size.height - lineSize.height, width: lineSize.width, height: lineSize.height)
-        UIGraphicsBeginImageContextWithOptions(size, false, 0)
-        UIColor.clear.setFill()
-        UIRectFill(rect)
-        color.setFill()
-        UIRectFill(rectLine)
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        return image
     }
 
 
