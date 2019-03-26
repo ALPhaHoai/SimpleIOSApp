@@ -11,7 +11,6 @@ import SnapKit
 
 class LeftViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-
     let tableVIew: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
@@ -61,8 +60,11 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGray,
                                                                    NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
-        view.addSubview(titlePanel)
-
+//        view.addSubview(titlePanel)
+//        titlePanel.snp.makeConstraints { maker in
+//            maker.leading.trailing.top.equalTo(view)
+//
+//        }
     }
 
     func setupTableView() {
@@ -72,8 +74,9 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         view.addSubview(tableVIew)
         tableVIew.snp.makeConstraints { maker in
-            maker.leading.trailing.bottom.equalTo(view)
-            maker.top.equalTo(titlePanel.snp.bottom)
+            maker.edges.equalTo(view)
+//            maker.leading.trailing.equalTo(view)
+//            maker.top.equalTo(titlePanel.snp.bottom)
         }
     }
 
@@ -96,9 +99,9 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
 //    }
 
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "01-01-2019"
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "01-01-2019"
+//    }
 
 }
 

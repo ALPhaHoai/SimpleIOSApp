@@ -95,9 +95,9 @@ class RightViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //    }
 
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "01-01-2019"
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "01-01-2019"
+//    }
 
 }
 

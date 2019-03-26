@@ -267,7 +267,7 @@ class TableCell: UITableViewCell {
             maker.leading.equalTo(rightContent.snp.leading).offset(20)
         }
 
-        let smallGroupIconText1 = getSmallGroupIconText(icon: #imageLiteral(resourceName: "marker-map-detail"), text: "2018/10/30 10:00")
+        let smallGroupIconText1 = getSmallGroupIconText(icon: #imageLiteral(resourceName: "clock-detail"), text: "2018/10/30 10:00")
         smallTextandIconGroup.addSubview(smallGroupIconText1)
         smallGroupIconText1.snp.makeConstraints { maker -> Void in
             maker.top.equalTo(smallTextandIconGroup)
@@ -278,7 +278,7 @@ class TableCell: UITableViewCell {
         smallGroupIconText2.snp.makeConstraints { maker -> Void in
             maker.top.equalTo(smallGroupIconText1.snp.bottom).offset(5)
         }
-        let smallGroupIconText3 = getSmallGroupIconText(icon: #imageLiteral(resourceName: "marker-map-detail"), text: "0988 123 1231")
+        let smallGroupIconText3 = getSmallGroupIconText(icon: #imageLiteral(resourceName: "phone-detail"), text: "0988 123 1231")
         smallTextandIconGroup.addSubview(smallGroupIconText3)
         smallGroupIconText3.snp.makeConstraints { maker -> Void in
             maker.top.equalTo(smallGroupIconText2.snp.bottom).offset(5)
