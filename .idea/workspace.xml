@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bf8238e-8554-4de1-8e50-6e68dc44df9b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/SimpleIOSApp/Assets.xcassets/sample_google_map.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SimpleIOSApp/Assets.xcassets/sample_google_map.imageset/sample_google_map.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleIOSApp.xcodeproj/project.xcworkspace/xcuserdata/bruce.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleIOSApp.xcodeproj/project.xcworkspace/xcuserdata/bruce.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleIOSApp/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleIOSApp/AppDelegate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleIOSApp/MyMapVC.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleIOSApp/MyMapVC.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleIOSApp/TableCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleIOSApp/TableCell.swift" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,16 +16,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_E80B2F88-BA2E-4A91-90A9-800E05942DF9" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_5CE3D1B5-1705-4983-A9F1-85A493731041" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.7765363">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SimpleIOSApp/TableCell.swift">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="160">
-                  <caret line="284" selection-start-line="284" selection-end-line="284" />
+                <state relative-caret-position="167">
+                  <caret line="270" column="9" selection-start-line="270" selection-start-column="9" selection-end-line="270" selection-end-column="9" />
                   <folding>
                     <element signature="e#105#117#0" expanded="true" />
                   </folding>
@@ -28,10 +34,15 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/SimpleIOSApp/Origin Sketch/3.jpg">
+              <provider selected="true" editor-type-id="images" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/SimpleIOSApp/MyMapVC.swift">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1185">
-                  <caret line="81" column="9" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
+                <state relative-caret-position="392">
+                  <caret line="71" column="103" selection-start-line="71" selection-start-column="103" selection-end-line="71" selection-end-column="103" />
                   <folding>
                     <element signature="e#105#122#0" expanded="true" />
                   </folding>
@@ -42,8 +53,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SimpleIOSApp/AppDelegate.swift">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+                <state relative-caret-position="367">
+                  <caret line="27" selection-start-line="27" selection-end-line="27" />
                 </state>
               </provider>
             </entry>
@@ -64,8 +75,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/SimpleIOSApp/MyMapVC.swift">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="67">
-                  <caret line="130" column="22" selection-start-line="130" selection-start-column="22" selection-end-line="130" selection-end-column="22" />
+                <state relative-caret-position="477">
+                  <caret line="187" column="48" selection-start-line="187" selection-start-column="48" selection-end-line="187" selection-end-column="48" />
                   <folding>
                     <element signature="e#105#122#0" expanded="true" />
                   </folding>
@@ -83,7 +94,6 @@
       <find>groupButton</find>
       <find>cellView</find>
       <find>topTitleLabel</find>
-      <find>clockTitleGroup</find>
       <find>self</find>
       <find>shadowColor</find>
       <find>UIImage</find>
@@ -95,6 +105,9 @@
       <find>UIFont</find>
       <find>lineDot</find>
       <find>border</find>
+      <find>clockTitleGroup</find>
+      <find>button 1</find>
+      <find>#image</find>
     </findStrings>
     <replaceStrings>
       <replace>rightContent</replace>
@@ -102,6 +115,7 @@
       <replace>rectangle</replace>
       <replace>clockTitleGroup</replace>
       <replace>appearance</replace>
+      <replace>topTitlePanel</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/SimpleIOSApp</dir>
@@ -142,8 +156,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1459" />
-    <option name="height" value="989" />
+    <option name="width" value="1474" />
+    <option name="height" value="1008" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -153,6 +167,42 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Cidr.FilesView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SimpleIOSApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SimpleIOSApp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SimpleIOSApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SimpleIOSApp" type="462c0819:PsiDirectoryNode" />
+              <item name="SimpleIOSApp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SimpleIOSApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SimpleIOSApp" type="462c0819:PsiDirectoryNode" />
+              <item name="SimpleIOSApp" type="462c0819:PsiDirectoryNode" />
+              <item name="Assets.xcassets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SimpleIOSApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SimpleIOSApp" type="462c0819:PsiDirectoryNode" />
+              <item name="SimpleIOSApp" type="462c0819:PsiDirectoryNode" />
+              <item name="Assets.xcassets" type="462c0819:PsiDirectoryNode" />
+              <item name="clock-detail.imageset" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SimpleIOSApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SimpleIOSApp" type="462c0819:PsiDirectoryNode" />
+              <item name="SimpleIOSApp" type="462c0819:PsiDirectoryNode" />
+              <item name="Assets.xcassets" type="462c0819:PsiDirectoryNode" />
+              <item name="clock-title.imageset" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -165,22 +215,6 @@
               <item name="" type="efc3779f:XcodeRootNode" />
               <item name="SimpleIOSApp" type="1d218c8b:XcodeProjectNode" />
               <item name="SimpleIOSApp" type="fcab9f18:XcodeViewNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Cidr.FilesView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SimpleIOSApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SimpleIOSApp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SimpleIOSApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SimpleIOSApp" type="462c0819:PsiDirectoryNode" />
-              <item name="SimpleIOSApp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -252,6 +286,8 @@
       <workItem from="1553582218360" duration="10387000" />
       <workItem from="1553593862444" duration="189000" />
       <workItem from="1553594918737" duration="1284000" />
+      <workItem from="1553652096364" duration="1000" />
+      <workItem from="1553652542724" duration="8745000" />
     </task>
     <task id="LOCAL-00001" summary="draw cell content">
       <created>1552984738359</created>
@@ -320,20 +356,20 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75214000" />
+    <option name="totallyTimeSpent" value="83960000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1459" height="989" extended-state="0" />
+    <frame x="0" y="23" width="1474" height="1008" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.21524347" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25209498" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32998884" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25083613" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39910814" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32969433" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18777293" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39847162" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -341,7 +377,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32998884" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32998884" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.2575251" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.25655022" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -424,6 +460,15 @@
     <MESSAGE value="add space between uitabbar and uitableview" />
     <option name="LAST_COMMIT_MESSAGE" value="add space between uitabbar and uitableview" />
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>groupButton.s</expression-string>
+        <language-id>Swift</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/SimpleIOSApp/Info.swift" />
     <entry file="file://$PROJECT_DIR$/SimpleIOSApp/Assets.xcassets/clock-detail.png" />
@@ -471,13 +516,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-269">
           <caret line="323" column="26" selection-start-line="323" selection-start-column="26" selection-end-line="323" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/Resources/module_cache.zip!/ModuleCache/10B61/4.2.1/arm64/iphoneos12.1/UIKit.UIButton/UIKit.UIButton.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -575,10 +613,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleIOSApp/Extensions.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2940">
+          <caret line="196" selection-start-line="196" selection-end-line="196" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleIOSApp/Origin Sketch/1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleIOSApp/Assets.xcassets/clock-detail.imageset/clock-detail.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleIOSApp/Assets.xcassets/clock-title.imageset/clock-title.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleIOSApp/Assets.xcassets/marker-circle-red-detail.imageset/marker-circle-red-detail.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleIOSApp/Assets.xcassets/marker-map-list.imageset/marker-map-list.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/Resources/module_cache.zip!/ModuleCache/10B61/4.2.1/arm64/iphoneos12.1/UIKit.UIButton/UIKit.UIButton.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SimpleIOSApp/TableCell.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="284" selection-start-line="284" selection-end-line="284" />
+        <state relative-caret-position="167">
+          <caret line="270" column="9" selection-start-line="270" selection-start-column="9" selection-end-line="270" selection-end-column="9" />
           <folding>
             <element signature="e#105#117#0" expanded="true" />
           </folding>
@@ -587,22 +654,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SimpleIOSApp/AppDelegate.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+        <state relative-caret-position="367">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleIOSApp/Extensions.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2940">
-          <caret line="196" selection-start-line="196" selection-end-line="196" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/SimpleIOSApp/Origin Sketch/3.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/SimpleIOSApp/MyMapVC.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="130" column="22" selection-start-line="130" selection-start-column="22" selection-end-line="130" selection-end-column="22" />
+        <state relative-caret-position="392">
+          <caret line="71" column="103" selection-start-line="71" selection-start-column="103" selection-end-line="71" selection-end-column="103" />
           <folding>
             <element signature="e#105#122#0" expanded="true" />
           </folding>

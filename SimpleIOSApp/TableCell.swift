@@ -75,7 +75,7 @@ class TableCell: UITableViewCell {
     }
 
 
-    func  getLabelTitle(text: String) -> UILabel {
+    func getLabelTitle(text: String) -> UILabel {
         let label = UILabel()
         label.text = text
         label.padding = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
@@ -85,58 +85,60 @@ class TableCell: UITableViewCell {
     }
 
     func getButton(text: String, bgColor: UIColor) -> UIButton {
-        let button1 = UIButton(type: .custom)
-        button1.setTitle(text, for: .normal)
+        let button = UIButton(type: .custom)
+        button.setTitle(text, for: .normal)
 
-        button1.layer.borderWidth = 0.1
-        button1.layer.borderColor = UIColor.black.cgColor
-        button1.layer.cornerRadius = 3;
+        button.layer.borderWidth = 0.1
+        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.cornerRadius = 3;
 
 
-        button1.layer.shadowColor = UIColor.black.cgColor
-        button1.layer.shadowOffset = CGSize(width: 0, height: 0)
-        button1.layer.shadowRadius = 20
-        button1.layer.shadowOpacity = 0.5
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 0)
+        button.layer.shadowRadius = 20
+        button.layer.shadowOpacity = 0.5
+
+
+//        button.contentEdgeInsets.left = 10 // add left padding.
+//        button.contentEdgeInsets.right = 10 // add right padding.
+//        button.titleEdgeInsets.top = 10 // add top padding.
+//        button.titleEdgeInsets.bottom = 10 // add bottom padding.
 
 
         // this value vary as per your desire
-        button1.clipsToBounds = true
-        button1.backgroundColor = bgColor
-        return button1
+        button.clipsToBounds = true
+        button.backgroundColor = bgColor
+        return button
     }
 
-    func getGroupButton() -> UIView {
+    func getGroupButton(textArray: [String?]) -> UIView {
         let groupButton = UIView()
-        let button1 = getButton(text: "Button 1", bgColor: #colorLiteral(red: 0.7711191705, green: 0.1692700618, blue: 0.1692700618, alpha: 1))
-
-        groupButton.addSubview(button1)
-        button1.snp.makeConstraints { maker -> Void in
-
-            maker.width.lessThanOrEqualTo(groupButton.snp.width).dividedBy(3)
-            maker.leading.equalTo(groupButton.snp.leading)
-            maker.top.bottom.equalTo(groupButton)
-
+        for i in (0..<textArray.count) {
+            if let text = textArray[i] {
+                var button = UIButton()
+                if i == 0 {
+                    button = getButton(text: text, bgColor: #colorLiteral(red: 0.9477817358, green: 0.6893126696, blue: 0.007571336754, alpha: 1))
+                } else {
+                    button = getButton(text: text, bgColor: #colorLiteral(red: 0.7711191705, green: 0.1692700618, blue: 0.1692700618, alpha: 1))
+                }
+                groupButton.addSubview(button)
+                button.snp.makeConstraints { maker -> Void in
+                    //maker.leading.equalTo(groupButton.snp.leading)
+                    maker.top.bottom.equalToSuperview()
+                }
+            }
         }
 
-        let button2 = getButton(text: "Button 2", bgColor: #colorLiteral(red: 0.7711191705, green: 0.1692700618, blue: 0.1692700618, alpha: 1))
-
-        groupButton.addSubview(button2)
-        button2.snp.makeConstraints { maker -> Void in
-            maker.width.lessThanOrEqualTo(groupButton.snp.width).dividedBy(3)
-            maker.centerX.equalTo(groupButton.snp.centerX)
-            maker.leading.equalTo(button1.snp.trailing).offset(5)
-            maker.top.bottom.equalTo(groupButton)
-
-        }
-
-        let button3 = getButton(text: "Button 3", bgColor: #colorLiteral(red: 0.9477817358, green: 0.6893126696, blue: 0.007571336754, alpha: 1))
-        groupButton.addSubview(button3)
-        button3.snp.makeConstraints { maker -> Void in
-            maker.width.lessThanOrEqualTo(groupButton.snp.width).dividedBy(3)
-            maker.trailing.equalTo(groupButton.snp.trailing)
-            maker.leading.equalTo(button2.snp.trailing).offset(5)
-            maker.top.bottom.equalTo(groupButton)
-
+        var preView: UIView? = nil
+        for subview in groupButton.subviews {
+            subview.snp.makeConstraints { maker in
+                if let cPreView = preView {
+                    maker.trailing.equalTo(cPreView.snp.leading).offset(-5)
+                } else {
+                    maker.trailing.equalToSuperview().offset(-10)
+                }
+            }
+            preView = subview
         }
 
         return groupButton
@@ -254,33 +256,34 @@ class TableCell: UITableViewCell {
             maker.leading.equalTo(leftUIView.snp.trailing).offset(10)
         }
 
-        let topTitleLabel = getLabelTitle(text: "This is top title label")
-        rightContent.addSubview(topTitleLabel)
-        topTitleLabel.snp.makeConstraints { maker -> Void in
+        let firstTitleLabel = getLabelTitle(text: "This is first title label")
+        rightContent.addSubview(firstTitleLabel)
+        firstTitleLabel.snp.makeConstraints { maker -> Void in
             maker.top.equalTo(rightContent.snp.top).offset(10)
         }
 
 
-        let smallTextandIconGroup = getSmallTextandIconGroup(parentView: rightContent)
+        let smallTextandIconGroup = getSmallTextandIconGroup()
+        rightContent.addSubview(smallTextandIconGroup)
         smallTextandIconGroup.snp.makeConstraints { maker -> Void in
-            maker.top.equalTo(topTitleLabel.snp.bottom)
+            maker.top.equalTo(firstTitleLabel.snp.bottom)
             maker.leading.equalTo(rightContent.snp.leading).offset(20)
         }
 
 
-        let bottomTitleLabel = getLabelTitle(text: "This is bottom title label")
-        rightContent.addSubview(bottomTitleLabel)
-        bottomTitleLabel.snp.makeConstraints { maker -> Void in
+        let secondTitleLabel = getLabelTitle(text: "This is second title label")
+        rightContent.addSubview(secondTitleLabel)
+        secondTitleLabel.snp.makeConstraints { maker -> Void in
             maker.top.equalTo(smallTextandIconGroup.snp.bottom)
         }
 
 
-        let groupButton = getGroupButton()
+        let groupButton = getGroupButton(textArray: ["Yealow Button", "Red Button", "Red Button"])
         rectangle.addSubview(groupButton)
         groupButton.snp.makeConstraints { maker -> Void in
             maker.top.equalTo(content.snp.bottom).offset(10)
-            maker.bottom.equalTo(rectangle.snp.bottom).offset(-10)
-            maker.trailing.equalTo(rectangle.snp.trailing).offset(-10)
+            maker.bottom.equalToSuperview().offset(-10)
+            maker.trailing.equalToSuperview().offset(-10)
         }
 
 
@@ -289,7 +292,7 @@ class TableCell: UITableViewCell {
         }
 
         markerMapDetail.snp.makeConstraints { maker -> Void in
-            maker.centerY.lessThanOrEqualTo(bottomTitleLabel.snp.centerY)
+            maker.centerY.lessThanOrEqualTo(secondTitleLabel.snp.centerY)
         }
 
         clockImage.snp.makeConstraints { maker -> Void in
@@ -300,10 +303,10 @@ class TableCell: UITableViewCell {
 
     }
 
-    func getSmallTextandIconGroup(parentView: UIView) -> UIView {
+    func getSmallTextandIconGroup() -> UIView {
         let maginTopBottom = 0
         let smallTextandIconGroup = UIView()
-        parentView.addSubview(smallTextandIconGroup)
+
 
 
         let smallGroupIconText1 = getSmallGroupIconText(icon: #imageLiteral(resourceName: "clock-detail"), text: "2018/10/30 10:00")

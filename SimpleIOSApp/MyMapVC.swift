@@ -10,34 +10,55 @@ import SnapKit
 class MyMapVC: UIViewController {
     let topTitlePanel: UIView = {
         let topTitlePanel = UIView()
+        let fontSize: CGFloat = 14.0;
+        let maginLeadingTrailing = 10
+        let marginTopBottom = 10
 
         let titleLabel1 = UILabel()
         titleLabel1.text = "Customer code: AHFSK"
-        titleLabel1.font = UIFont.boldSystemFont(ofSize: 18.0)
+        titleLabel1.font = UIFont.systemFont(ofSize: fontSize)
         topTitlePanel.addSubview(titleLabel1)
         titleLabel1.snp.makeConstraints { maker in
-            maker.top.leading.equalToSuperview()
+            maker.top.equalToSuperview().offset(marginTopBottom)
+            maker.leading.equalToSuperview().offset(maginLeadingTrailing)
         }
 
         let titleLabel2 = UILabel()
         titleLabel2.text = "Postal code: 3543"
-        titleLabel2.font = UIFont.boldSystemFont(ofSize: 18.0)
+        titleLabel2.font = UIFont.systemFont(ofSize: fontSize)
         topTitlePanel.addSubview(titleLabel2)
         titleLabel2.snp.makeConstraints { maker in
-            maker.top.trailing.equalToSuperview()
+            maker.top.equalTo(titleLabel1.snp.top)
+            maker.trailing.equalToSuperview().offset(-maginLeadingTrailing)
         }
 
         let titleLabel3 = UILabel()
         titleLabel3.text = "Project: ABCfd434"
-        titleLabel3.font = UIFont.boldSystemFont(ofSize: 18.0)
+        titleLabel3.font = UIFont.systemFont(ofSize: fontSize)
         topTitlePanel.addSubview(titleLabel3)
         titleLabel3.snp.makeConstraints { maker in
             maker.top.equalTo(titleLabel1.snp.bottom)
             maker.leading.equalTo(titleLabel1.snp.leading)
-            maker.bottom.equalToSuperview()
+            maker.bottom.equalToSuperview().offset(-marginTopBottom)
         }
+
+        //add border and shadow
+        topTitlePanel.layer.shadowColor = UIColor.black.cgColor
+        topTitlePanel.layer.shadowOffset = CGSize(width: 0, height: 1)
+        topTitlePanel.layer.shadowOpacity = 0.1
+        topTitlePanel.layer.shadowRadius = 0.5
+        topTitlePanel.layer.masksToBounds = false
+        topTitlePanel.clipsToBounds = false
+        topTitlePanel.layer.cornerRadius = 3
+
+        topTitlePanel.layer.borderWidth = 1
+        topTitlePanel.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0.5)
+
+
         return topTitlePanel
     }()
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,13 +66,13 @@ class MyMapVC: UIViewController {
     }
 
     private func setUpView() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "sample_google_map"))
 
         let mainView = UIView()
-
+        view.addSubview(mainView)
+        mainView.backgroundColor = .white
         mainView.layer.borderWidth = 1
         mainView.layer.borderColor = UIColor.lightGray.cgColor
-
         mainView.layer.shadowColor = UIColor.black.cgColor
         mainView.layer.shadowOffset = CGSize(width: 0, height: 1)
         mainView.layer.shadowOpacity = 0.1
@@ -60,11 +81,9 @@ class MyMapVC: UIViewController {
         mainView.clipsToBounds = false
         mainView.layer.cornerRadius = 3
 
-
-        view.addSubview(mainView)
-
         mainView.snp.makeConstraints { maker in
-            maker.leading.trailing.equalToSuperview().offset(10)
+            maker.leading.equalToSuperview().offset(10)
+            maker.trailing.equalToSuperview().offset(-10)
             maker.bottom.equalToSuperview().offset(-20)
         }
 
@@ -90,7 +109,7 @@ class MyMapVC: UIViewController {
 
         let leftUIView = UIView()
 
-        let markerCircleRedList = UIImageView(image: #imageLiteral(resourceName: "marker-circle-red-list").resizeImage(targetSize: CGSize(width: 12, height: 12)))
+        let markerCircleRedList = UIImageView(image: #imageLiteral(resourceName: "marker-circle-red-detail").resizeImage(targetSize: CGSize(width: 20, height: 20)))
 
         markerCircleRedList.contentMode = .scaleAspectFit
         leftUIView.addSubview(markerCircleRedList);
@@ -99,7 +118,7 @@ class MyMapVC: UIViewController {
             maker.centerX.equalTo(leftUIView.snp.centerX)
         }
 
-        let markerMapDetail = UIImageView(image: #imageLiteral(resourceName: "marker-map-detail").resizeImage(targetSize: CGSize(width: 15, height: 15)))
+        let markerMapDetail = UIImageView(image: #imageLiteral(resourceName: "marker-map-detail").resizeImage(targetSize: CGSize(width: 24, height: 24)))
         markerMapDetail.contentMode = .scaleAspectFit
         leftUIView.addSubview(markerMapDetail);
         markerMapDetail.snp.makeConstraints { maker -> Void in
@@ -131,46 +150,53 @@ class MyMapVC: UIViewController {
             maker.leading.equalTo(leftUIView.snp.trailing).offset(10)
         }
 
-        let topTitleLabel = TableCell().getLabelTitle(text: "This is top title label")
-        rightContent.addSubview(topTitleLabel)
-        topTitleLabel.snp.makeConstraints { maker -> Void in
-            maker.top.equalTo(rightContent.snp.top).offset(10)
+        let firstTitleLabel = TableCell().getLabelTitle(text: "This is first title label")
+        rightContent.addSubview(firstTitleLabel)
+        firstTitleLabel.snp.makeConstraints { maker -> Void in
+            maker.top.equalToSuperview().offset(10)
         }
 
 
-        let smallTextandIconGroup = TableCell().getSmallTextandIconGroup(parentView: rightContent)
+        let smallTextandIconGroup = TableCell().getSmallTextandIconGroup()
+        rightContent.addSubview(smallTextandIconGroup)
         smallTextandIconGroup.snp.makeConstraints { maker -> Void in
-            maker.top.equalTo(topTitleLabel.snp.bottom)
-            maker.leading.equalTo(rightContent.snp.leading).offset(20)
+            maker.top.equalTo(firstTitleLabel.snp.bottom)
+            maker.leading.equalToSuperview().offset(20)
         }
 
 
-        let bottomTitleLabel = TableCell().getLabelTitle(text: "This is bottom title label")
-        rightContent.addSubview(bottomTitleLabel)
-        bottomTitleLabel.snp.makeConstraints { maker -> Void in
+        let secondTitleLabel = TableCell().getLabelTitle(text: "This is second title label")
+        rightContent.addSubview(secondTitleLabel)
+        secondTitleLabel.snp.makeConstraints { maker -> Void in
             maker.top.equalTo(smallTextandIconGroup.snp.bottom)
         }
 
 
-        let groupButton = TableCell().getGroupButton()
+        let smallTextandIconGroup2 = TableCell().getSmallTextandIconGroup()
+        rightContent.addSubview(smallTextandIconGroup2)
+        smallTextandIconGroup2.snp.makeConstraints { maker -> Void in
+            maker.top.equalTo(secondTitleLabel.snp.bottom)
+            maker.leading.equalToSuperview().offset(20)
+        }
+
+
+        let groupButton = TableCell().getGroupButton(textArray: ["  Abnormal  ","  Not arrived  ", "  Not Recieved  " ])
         rectangle.addSubview(groupButton)
         groupButton.snp.makeConstraints { maker -> Void in
-            maker.top.equalTo(content.snp.bottom).offset(10)
-            maker.bottom.equalTo(rectangle.snp.bottom).offset(-10)
-            maker.trailing.equalTo(rectangle.snp.trailing).offset(-10)
+            maker.top.equalTo(smallTextandIconGroup2.snp.bottom).offset(10)
+            maker.bottom.equalToSuperview().offset(-10)
+            maker.trailing.equalToSuperview().offset(-10)
         }
 
 
         markerCircleRedList.snp.makeConstraints { maker -> Void in
-            maker.top.equalToSuperview().offset(10)
+//            maker.top.equalToSuperview().offset(10)
+            maker.centerY.equalTo(firstTitleLabel.snp.centerY)
         }
 
         markerMapDetail.snp.makeConstraints { maker -> Void in
-            maker.centerY.lessThanOrEqualTo(bottomTitleLabel.snp.centerY)
+            maker.centerY.lessThanOrEqualTo(secondTitleLabel.snp.centerY)
         }
-
-
-
 
 
     }
