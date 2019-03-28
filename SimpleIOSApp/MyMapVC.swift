@@ -6,8 +6,16 @@
 import Foundation
 import UIKit
 import SnapKit
+import Alamofire
 
 class MyMapVC: UIViewController {
+    var StartAddress = UILabel()
+    var EndAddress = UILabel()
+
+    var EstimatedStatrtTime = UILabel()
+    var Order_Number = UILabel()
+    var EndContactPhone = UILabel()
+
     let topTitlePanel: UIView = {
         let topTitlePanel = UIView()
         let fontSize: CGFloat = 14.0;
@@ -150,9 +158,9 @@ class MyMapVC: UIViewController {
             maker.leading.equalTo(leftUIView.snp.trailing).offset(10)
         }
 
-        let firstTitleLabel = TableCell().getLabelTitle(text: "This is first title label")
-        rightContent.addSubview(firstTitleLabel)
-        firstTitleLabel.snp.makeConstraints { maker -> Void in
+        self.StartAddress = TableCell().getLabelTitle()
+        rightContent.addSubview(self.StartAddress)
+        self.StartAddress.snp.makeConstraints { maker -> Void in
             maker.top.equalToSuperview().offset(10)
         }
 
@@ -160,30 +168,33 @@ class MyMapVC: UIViewController {
         let smallTextandIconGroup = TableCell().getSmallTextandIconGroup()
         rightContent.addSubview(smallTextandIconGroup)
         smallTextandIconGroup.snp.makeConstraints { maker -> Void in
-            maker.top.equalTo(firstTitleLabel.snp.bottom)
+            maker.top.equalTo(self.StartAddress.snp.bottom)
             maker.leading.equalToSuperview().offset(20)
+            maker.trailing.lessThanOrEqualToSuperview()
         }
 
 
-        let secondTitleLabel = TableCell().getLabelTitle(text: "This is second title label")
-        rightContent.addSubview(secondTitleLabel)
-        secondTitleLabel.snp.makeConstraints { maker -> Void in
+        self.EndAddress = TableCell().getLabelTitle()
+        rightContent.addSubview(self.EndAddress)
+        self.EndAddress.snp.makeConstraints { maker -> Void in
             maker.top.equalTo(smallTextandIconGroup.snp.bottom)
+            maker.leading.equalToSuperview()
+            maker.trailing.lessThanOrEqualToSuperview()
         }
 
 
-        let smallTextandIconGroup2 = TableCell().getSmallTextandIconGroup()
-        rightContent.addSubview(smallTextandIconGroup2)
-        smallTextandIconGroup2.snp.makeConstraints { maker -> Void in
-            maker.top.equalTo(secondTitleLabel.snp.bottom)
-            maker.leading.equalToSuperview().offset(20)
-        }
+//        let smallTextandIconGroup2 = TableCell().getSmallTextandIconGroup()
+//        rightContent.addSubview(smallTextandIconGroup2)
+//        smallTextandIconGroup2.snp.makeConstraints { maker -> Void in
+//            maker.top.equalTo(self.EndAddress.snp.bottom)
+//            maker.leading.equalToSuperview().offset(20)
+//        }
 
 
         let groupButton = TableCell().getGroupButton(textArray: ["  Abnormal  ","  Not arrived  ", "  Not Recieved  " ])
         rectangle.addSubview(groupButton)
         groupButton.snp.makeConstraints { maker -> Void in
-            maker.top.equalTo(smallTextandIconGroup2.snp.bottom).offset(10)
+            maker.top.equalTo(content.snp.bottom).offset(10)
             maker.bottom.equalToSuperview().offset(-10)
             maker.trailing.equalToSuperview().offset(-10)
         }
@@ -191,11 +202,11 @@ class MyMapVC: UIViewController {
 
         markerCircleRedList.snp.makeConstraints { maker -> Void in
 //            maker.top.equalToSuperview().offset(10)
-            maker.centerY.equalTo(firstTitleLabel.snp.centerY)
+            maker.centerY.equalTo(self.StartAddress.snp.centerY)
         }
 
         markerMapDetail.snp.makeConstraints { maker -> Void in
-            maker.centerY.lessThanOrEqualTo(secondTitleLabel.snp.centerY)
+            maker.centerY.lessThanOrEqualTo(self.EndAddress.snp.centerY)
         }
 
 

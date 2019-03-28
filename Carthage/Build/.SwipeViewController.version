@@ -1,9 +1,18 @@
 {
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
   "commitish" : "1.1.1",
   "iOS" : [
     {
       "name" : "SwipeViewController",
-      "hash" : "f8d383dbed837ed49a02a0a0de8f0c677ea5bc2db6c3311d0dfeee444a4008dc"
+      "hash" : "0da4587fb08cf0fe0255ffc1128b2e5e0d1cc1d3b9fd7d40a2c3832abc496eac"
     }
   ]
 }

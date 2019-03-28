@@ -5,8 +5,15 @@
 
 import UIKit
 import SnapKit
+import Alamofire
 
 class TableCell: UITableViewCell {
+    var StartAddress = UILabel()
+    var EndAddress = UILabel()
+
+    var EstimatedStatrtTime = UILabel()
+    var Order_Number = UILabel()
+    var EndContactPhone = UILabel()
 
 
     //adding spacing between table cell
@@ -49,7 +56,7 @@ class TableCell: UITableViewCell {
     }()
 
 
-    func getSmallGroupIconText(icon: UIImage, text: String) -> UIView {
+    func getSmallGroupIconText(icon: UIImage, text: String, label: UILabel) -> UIView {
         let smallGroup = UIView()
 
         let smallImage = UIImageView(image: icon)
@@ -60,12 +67,11 @@ class TableCell: UITableViewCell {
         }
 
 
-        let smallTextLabel = UILabel()
-        smallTextLabel.text = text
-        smallTextLabel.font = smallTextLabel.font.withSize(14)
-        smallTextLabel.textColor = #colorLiteral(red: 0.493902439, green: 0.5, blue: 0.5, alpha: 1)
-        smallGroup.addSubview(smallTextLabel)
-        smallTextLabel.snp.makeConstraints { maker -> Void in
+        label.text = text
+        label.font = label.font.withSize(14)
+        label.textColor = #colorLiteral(red: 0.493902439, green: 0.5, blue: 0.5, alpha: 1)
+        smallGroup.addSubview(label)
+        label.snp.makeConstraints { maker -> Void in
             maker.leading.equalTo(smallImage.snp.trailing).offset(10)
             maker.top.bottom.equalTo(smallGroup)
         }
@@ -75,12 +81,13 @@ class TableCell: UITableViewCell {
     }
 
 
-    func getLabelTitle(text: String) -> UILabel {
+    func getLabelTitle() -> UILabel {
         let label = UILabel()
-        label.text = text
+        label.text = ""
         label.padding = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         label.textColor = #colorLiteral(red: 0.2548794746, green: 0.254914552, blue: 0.2548675537, alpha: 1)
-        label.font = UIFont.boldSystemFont(ofSize: 18.0)
+        label.font = UIFont.bold(label.font)()
+
         return label
     }
 
@@ -144,9 +151,6 @@ class TableCell: UITableViewCell {
         return groupButton
     }
 
-    func getCell() {
-
-    }
 
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -256,25 +260,29 @@ class TableCell: UITableViewCell {
             maker.leading.equalTo(leftUIView.snp.trailing).offset(10)
         }
 
-        let firstTitleLabel = getLabelTitle(text: "This is first title label")
-        rightContent.addSubview(firstTitleLabel)
-        firstTitleLabel.snp.makeConstraints { maker -> Void in
+        self.StartAddress = getLabelTitle()
+        rightContent.addSubview(self.StartAddress)
+        self.StartAddress.snp.makeConstraints { maker -> Void in
             maker.top.equalTo(rightContent.snp.top).offset(10)
+            maker.leading.equalToSuperview()
+            maker.trailing.lessThanOrEqualToSuperview()
         }
 
 
         let smallTextandIconGroup = getSmallTextandIconGroup()
         rightContent.addSubview(smallTextandIconGroup)
         smallTextandIconGroup.snp.makeConstraints { maker -> Void in
-            maker.top.equalTo(firstTitleLabel.snp.bottom)
+            maker.top.equalTo(self.StartAddress.snp.bottom)
             maker.leading.equalTo(rightContent.snp.leading).offset(20)
         }
 
 
-        let secondTitleLabel = getLabelTitle(text: "This is second title label")
-        rightContent.addSubview(secondTitleLabel)
-        secondTitleLabel.snp.makeConstraints { maker -> Void in
+        self.EndAddress = getLabelTitle()
+        rightContent.addSubview(self.EndAddress)
+        self.EndAddress.snp.makeConstraints { maker -> Void in
             maker.top.equalTo(smallTextandIconGroup.snp.bottom)
+            maker.leading.equalToSuperview()
+            maker.trailing.lessThanOrEqualToSuperview()
         }
 
 
@@ -292,7 +300,7 @@ class TableCell: UITableViewCell {
         }
 
         markerMapDetail.snp.makeConstraints { maker -> Void in
-            maker.centerY.lessThanOrEqualTo(secondTitleLabel.snp.centerY)
+            maker.centerY.lessThanOrEqualTo(self.EndAddress.snp.centerY)
         }
 
         clockImage.snp.makeConstraints { maker -> Void in
@@ -309,18 +317,18 @@ class TableCell: UITableViewCell {
 
 
 
-        let smallGroupIconText1 = getSmallGroupIconText(icon: #imageLiteral(resourceName: "clock-detail"), text: "2018/10/30 10:00")
+        let smallGroupIconText1 = getSmallGroupIconText(icon: #imageLiteral(resourceName: "clock-detail"), text: "2018/10/30 10:00", label: self.EstimatedStatrtTime)
         smallTextandIconGroup.addSubview(smallGroupIconText1)
         smallGroupIconText1.snp.makeConstraints { maker -> Void in
             maker.top.equalTo(smallTextandIconGroup).offset(maginTopBottom)
         }
 
-        let smallGroupIconText2 = getSmallGroupIconText(icon: #imageLiteral(resourceName: "dropbox-detail"), text: "Abcabc123")
+        let smallGroupIconText2 = getSmallGroupIconText(icon: #imageLiteral(resourceName: "dropbox-detail"), text: "Abcabc123", label: self.Order_Number)
         smallTextandIconGroup.addSubview(smallGroupIconText2)
         smallGroupIconText2.snp.makeConstraints { maker -> Void in
             maker.top.equalTo(smallGroupIconText1.snp.bottom).offset(5)
         }
-        let smallGroupIconText3 = getSmallGroupIconText(icon: #imageLiteral(resourceName: "phone-detail"), text: "0988 123 1231")
+        let smallGroupIconText3 = getSmallGroupIconText(icon: #imageLiteral(resourceName: "phone-detail"), text: "0988 123 1231", label: self.EndContactPhone)
         smallTextandIconGroup.addSubview(smallGroupIconText3)
         smallGroupIconText3.snp.makeConstraints { maker -> Void in
             maker.top.equalTo(smallGroupIconText2.snp.bottom).offset(5)

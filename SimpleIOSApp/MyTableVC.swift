@@ -8,14 +8,15 @@
 
 import UIKit
 import SnapKit
+import Alamofire
 
 class MyTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var isAbnormal = false;
 
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
-        tableView.allowsSelection = false
-
+        tableView.allowsSelection = true
 
 
         return tableView
@@ -41,8 +42,7 @@ class MyTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         datePicker.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0.5)
         titlePanel.addSubview(datePicker)
 
-        datePicker.contentEdgeInsets =  UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-
+        datePicker.contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
 
 
         datePicker.snp.makeConstraints { maker -> Void in
@@ -65,7 +65,43 @@ class MyTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+
+        getDatafromApi()
+
         setupTableView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let index = self.tableView.indexPathForSelectedRow{
+            self.tableView.deselectRow(at: index, animated: false)
+        }
+    }
+
+
+    private var data: [[String: Any]] = [[String: Any]]() {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+
+
+    private func getDatafromApi() {
+        let endPoint = "http://14.232.214.186:8080/Eup_Java_WorkHour/EDriver_SOAP"
+        let parameters: Parameters = [
+            "Param": "{\"DriverID\":3000002,\"Date\":\"2018\\/12\\/28\",\"MethodName\":\"GetDispatchCarOrderByDriverID\"}"
+        ]
+        AF.request(endPoint, method: .get, parameters: parameters).responseJSON { res in
+            if let result = res.result.value as! [String: Any]? {
+                if let data = result["result"] as! [[String: Any]]? {
+                    for var item in data {
+                        if (item["IsAbnormal"] as? Int ?? 0 == 0) == self.isAbnormal {
+                            self.data.append(item)
+                        }
+                    }
+                }
+            }
+        }
     }
 
     func setupViews() {
@@ -97,26 +133,47 @@ class MyTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.data.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TableCell
+
+        let item = self.data[indexPath.row]
+
+        cell.StartAddress.text = item["StartAddress"] as? String ?? ""
+        cell.EndAddress.text = item["EndAddress"] as? String ?? ""
+
+        cell.EstimatedStatrtTime.text = item["EstimatedStatrtTime"] as? String ?? ""
+        cell.Order_Number.text = item["Order_Number"] as? String ?? ""
+        cell.EndContactPhone.text = item["EndContactPhone"] as? String ?? ""
+
+        print("\(item)\n")
+
         return cell
     }
 
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 200
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+let item = self.data[indexPath.row]
+        let vc = MyMapVC()
+
+//        present(vc, animated: false)
+        self.navigationController?.pushViewController(vc, animated: false)
+//        self.navigationController?.present(vc, animated: false)
+
+        vc.StartAddress.text = item["StartAddress"] as? String ?? ""
+        vc.EndAddress.text = item["EndAddress"] as? String ?? ""
+        vc.EstimatedStatrtTime.text = item["EstimatedStatrtTime"] as? String ?? ""
+        vc.Order_Number.text = item["Order_Number"] as? String ?? ""
+        vc.EndContactPhone.text = item["EndContactPhone"] as? String ?? ""
+
+    }
 
 
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "01-01-2019"
-//    }
 
 }
 

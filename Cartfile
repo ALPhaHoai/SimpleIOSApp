@@ -2,3 +2,4 @@ github "xmartlabs/XLPagerTabStrip" ~> 8.1
 github "EndouMari/TabPageViewController"
 github "SnapKit/SnapKit" ~> 4.0.0
 github "fortmarek/SwipeViewController"
+github "Alamofire/Alamofire" "5.0.0-beta.3"

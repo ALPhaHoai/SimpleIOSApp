@@ -18,13 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
+
+
+
         let maintabBarController = MainTabBarController()
 
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-//        window?.rootViewController = maintabBarController
-        window?.rootViewController = MyMapVC()
+
+
+        let uinavigation = UINavigationController(rootViewController: maintabBarController)
+
+
+        window?.rootViewController = uinavigation
+//        window?.rootViewController = MyMapVC()
 
 
         if let font = UIFont(name: "Helvetica", size: 18.0) {

@@ -10,6 +10,7 @@
 		32019B462244C6990044BDB0 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32019B452244C6990044BDB0 /* XLPagerTabStrip.framework */; };
 		321C8FF82244D4B60076A86D /* TabPageViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321C8FF72244D4B60076A86D /* TabPageViewController.framework */; };
 		321C8FFA2244D7660076A86D /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321C8FF92244D7660076A86D /* SnapKit.framework */; };
+		325CD3BC224C6C9B0043C8DB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 325CD3BB224C6C9B0043C8DB /* Alamofire.framework */; };
 		326B22E52244D8E0004A4C49 /* SwipeViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326B22E42244D8E0004A4C49 /* SwipeViewController.framework */; };
 		59A95047FA214D5A659A3755 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A952051E208D2D26FCE998 /* MainTabBarController.swift */; };
 		59A9526DFFDE0B742C85A3E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A95AADB293BE5DBFA937F9 /* Extensions.swift */; };
@@ -25,6 +26,7 @@
 		32019B452244C6990044BDB0 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		321C8FF72244D4B60076A86D /* TabPageViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TabPageViewController.framework; path = Carthage/Build/iOS/TabPageViewController.framework; sourceTree = "<group>"; };
 		321C8FF92244D7660076A86D /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		325CD3BB224C6C9B0043C8DB /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		326B22E42244D8E0004A4C49 /* SwipeViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwipeViewController.framework; path = Carthage/Build/iOS/SwipeViewController.framework; sourceTree = "<group>"; };
 		59A952051E208D2D26FCE998 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		59A9574C49826418C87538A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			files = (
 				326B22E52244D8E0004A4C49 /* SwipeViewController.framework in Frameworks */,
 				32019B462244C6990044BDB0 /* XLPagerTabStrip.framework in Frameworks */,
+				325CD3BC224C6C9B0043C8DB /* Alamofire.framework in Frameworks */,
 				321C8FF82244D4B60076A86D /* TabPageViewController.framework in Frameworks */,
 				321C8FFA2244D7660076A86D /* SnapKit.framework in Frameworks */,
 			);
@@ -56,6 +59,7 @@
 		32019B442244C6990044BDB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				325CD3BB224C6C9B0043C8DB /* Alamofire.framework */,
 				326B22E42244D8E0004A4C49 /* SwipeViewController.framework */,
 				321C8FF92244D7660076A86D /* SnapKit.framework */,
 				321C8FF72244D4B60076A86D /* TabPageViewController.framework */,
@@ -169,6 +173,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/TabPageViewController.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwipeViewController.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 			);
 			name = "Carthage copy framework";
 			outputFileListPaths = (
@@ -178,6 +183,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/TabPageViewController.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwipeViewController.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
