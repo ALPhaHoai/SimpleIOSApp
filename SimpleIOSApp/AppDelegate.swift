@@ -26,13 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
+        window?.backgroundColor = .white
 
 
         let uinavigation = UINavigationController(rootViewController: maintabBarController)
 
-
-        window?.rootViewController = uinavigation
+//        window?.rootViewController = uinavigation
 //        window?.rootViewController = MyMapVC()
+        window?.rootViewController = TestDatePicker()
 
 
         if let font = UIFont(name: "Helvetica", size: 18.0) {
