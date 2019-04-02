@@ -3,15 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32019B462244C6990044BDB0 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32019B452244C6990044BDB0 /* XLPagerTabStrip.framework */; };
-		321C8FF82244D4B60076A86D /* TabPageViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321C8FF72244D4B60076A86D /* TabPageViewController.framework */; };
-		321C8FFA2244D7660076A86D /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321C8FF92244D7660076A86D /* SnapKit.framework */; };
-		325CD3BC224C6C9B0043C8DB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 325CD3BB224C6C9B0043C8DB /* Alamofire.framework */; };
-		326B22E52244D8E0004A4C49 /* SwipeViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326B22E42244D8E0004A4C49 /* SwipeViewController.framework */; };
+		32966979224E2B5300DE60A7 /* TestDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32966978224E2B5300DE60A7 /* TestDatePicker.swift */; };
 		59A95047FA214D5A659A3755 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A952051E208D2D26FCE998 /* MainTabBarController.swift */; };
 		59A9526DFFDE0B742C85A3E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A95AADB293BE5DBFA937F9 /* Extensions.swift */; };
 		59A95276D7B2FC80ABB209F7 /* MyTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A959790A4BAC992228A49E /* MyTableVC.swift */; };
@@ -20,14 +16,13 @@
 		59A9584E9230318515F3F8B9 /* MyMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A95C6AB0019A5D8AD1A487 /* MyMapVC.swift */; };
 		59A95D384F1A1FC243886321 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A95767C08C097591FA06B9 /* Assets.xcassets */; };
 		59A95F70DAB2E45B7766D56D /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A957953A4E022019BA5126 /* TableCell.swift */; };
+		76AEED6097C8862CE12A644E /* Pods_SimpleIOSApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6050A0570E12E2EFA7325096 /* Pods_SimpleIOSApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		32019B452244C6990044BDB0 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
-		321C8FF72244D4B60076A86D /* TabPageViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TabPageViewController.framework; path = Carthage/Build/iOS/TabPageViewController.framework; sourceTree = "<group>"; };
-		321C8FF92244D7660076A86D /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
-		325CD3BB224C6C9B0043C8DB /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		326B22E42244D8E0004A4C49 /* SwipeViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwipeViewController.framework; path = Carthage/Build/iOS/SwipeViewController.framework; sourceTree = "<group>"; };
+		32966978224E2B5300DE60A7 /* TestDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDatePicker.swift; sourceTree = "<group>"; };
+		3A243298EBC2A7A52C7029F3 /* Pods-SimpleIOSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleIOSApp.release.xcconfig"; path = "Target Support Files/Pods-SimpleIOSApp/Pods-SimpleIOSApp.release.xcconfig"; sourceTree = "<group>"; };
+		4718C84EE996D8F07C4FFA76 /* Pods-SimpleIOSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleIOSApp.debug.xcconfig"; path = "Target Support Files/Pods-SimpleIOSApp/Pods-SimpleIOSApp.debug.xcconfig"; sourceTree = "<group>"; };
 		59A952051E208D2D26FCE998 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		59A9574C49826418C87538A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59A95767C08C097591FA06B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +33,7 @@
 		59A95C0BAD3CF1EE4A698A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		59A95C6AB0019A5D8AD1A487 /* MyMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMapVC.swift; sourceTree = "<group>"; };
 		59A95FEF819A60839B9A540C /* SimpleIOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleIOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6050A0570E12E2EFA7325096 /* Pods_SimpleIOSApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleIOSApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,29 +41,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				326B22E52244D8E0004A4C49 /* SwipeViewController.framework in Frameworks */,
-				32019B462244C6990044BDB0 /* XLPagerTabStrip.framework in Frameworks */,
-				325CD3BC224C6C9B0043C8DB /* Alamofire.framework in Frameworks */,
-				321C8FF82244D4B60076A86D /* TabPageViewController.framework in Frameworks */,
-				321C8FFA2244D7660076A86D /* SnapKit.framework in Frameworks */,
+				76AEED6097C8862CE12A644E /* Pods_SimpleIOSApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		32019B442244C6990044BDB0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				325CD3BB224C6C9B0043C8DB /* Alamofire.framework */,
-				326B22E42244D8E0004A4C49 /* SwipeViewController.framework */,
-				321C8FF92244D7660076A86D /* SnapKit.framework */,
-				321C8FF72244D4B60076A86D /* TabPageViewController.framework */,
-				32019B452244C6990044BDB0 /* XLPagerTabStrip.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		59A9551DBAF7FE45BED17DEB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,7 +61,8 @@
 			children = (
 				59A9551DBAF7FE45BED17DEB /* Products */,
 				59A95A1B4BFBA824FDA86A76 /* SimpleIOSApp */,
-				32019B442244C6990044BDB0 /* Frameworks */,
+				EC43200A2FD9B47EC1522314 /* Pods */,
+				B4A32C5A3658ADFC78786409 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +78,26 @@
 				59A957953A4E022019BA5126 /* TableCell.swift */,
 				59A952051E208D2D26FCE998 /* MainTabBarController.swift */,
 				59A95C6AB0019A5D8AD1A487 /* MyMapVC.swift */,
+				32966978224E2B5300DE60A7 /* TestDatePicker.swift */,
 			);
 			path = SimpleIOSApp;
+			sourceTree = "<group>";
+		};
+		B4A32C5A3658ADFC78786409 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6050A0570E12E2EFA7325096 /* Pods_SimpleIOSApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC43200A2FD9B47EC1522314 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4718C84EE996D8F07C4FFA76 /* Pods-SimpleIOSApp.debug.xcconfig */,
+				3A243298EBC2A7A52C7029F3 /* Pods-SimpleIOSApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,10 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59A9579185CEB333218551FE /* Build configuration list for PBXNativeTarget "SimpleIOSApp" */;
 			buildPhases = (
+				E93CD029DE66152E0477B75E /* [CP] Check Pods Manifest.lock */,
 				59A95DA0532A688B254741C0 /* Sources */,
 				59A9558419D1627ACBEBBE19 /* Frameworks */,
 				59A95BAF2AFD8C48D65C279D /* Resources */,
-				32019B432244C5270044BDB0 /* Carthage copy framework */,
+				4E005687005E602C0CF3D065 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,7 +128,7 @@
 		59A952147F1192AF5BBA2DE3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				ORGANIZATIONNAME = "___FULLUSERNAME___";
+				ORGANIZATIONNAME = ___FULLUSERNAME___;
 			};
 			buildConfigurationList = 59A952D8A9F92EB551FF8517 /* Build configuration list for PBXProject "SimpleIOSApp" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -160,34 +160,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		32019B432244C5270044BDB0 /* Carthage copy framework */ = {
+		4E005687005E602C0CF3D065 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"",
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/XLPagerTabStrip.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/TabPageViewController.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwipeViewController.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleIOSApp/Pods-SimpleIOSApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
-			name = "Carthage copy framework";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/XLPagerTabStrip.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/TabPageViewController.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwipeViewController.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimpleIOSApp/Pods-SimpleIOSApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E93CD029DE66152E0477B75E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpleIOSApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -199,6 +216,7 @@
 				59A9575A08034FCC5A3600F7 /* AppDelegate.swift in Sources */,
 				59A95276D7B2FC80ABB209F7 /* MyTableVC.swift in Sources */,
 				59A9526DFFDE0B742C85A3E6 /* Extensions.swift in Sources */,
+				32966979224E2B5300DE60A7 /* TestDatePicker.swift in Sources */,
 				59A95F70DAB2E45B7766D56D /* TableCell.swift in Sources */,
 				59A95047FA214D5A659A3755 /* MainTabBarController.swift in Sources */,
 				59A9584E9230318515F3F8B9 /* MyMapVC.swift in Sources */,
@@ -282,6 +300,7 @@
 		};
 		59A9549C94913279DCDC32A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4718C84EE996D8F07C4FFA76 /* Pods-SimpleIOSApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -289,10 +308,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SimpleIOSApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = utolayoutDemo.long.com.SimpleIOSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -349,14 +365,14 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		59A9569C36122D209132DC39 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A243298EBC2A7A52C7029F3 /* Pods-SimpleIOSApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -364,10 +380,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SimpleIOSApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = utolayoutDemo.long.com.SimpleIOSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

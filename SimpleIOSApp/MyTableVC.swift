@@ -87,7 +87,7 @@ class MyTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let parameters: Parameters = [
             "Param": "{\"DriverID\":3000002,\"Date\":\"2018\\/12\\/28\",\"MethodName\":\"GetDispatchCarOrderByDriverID\"}"
         ]
-        AF.request(endPoint, method: .get, parameters: parameters).responseJSON { res in
+        Alamofire.request(endPoint, method: .get, parameters: parameters).responseJSON { res in
             if let result = res.result.value as! [String: Any]? {
                 if let data = result["result"] as! [[String: Any]]? {
                     print(data.count)
