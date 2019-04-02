@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let maintabBarController = MainTabBarController()
         let uinavigation = UINavigationController(rootViewController: maintabBarController)
+        uinavigation.navigationBar.backgroundColor = .white
+        uinavigation.navigationBar.isTranslucent = true
+        uinavigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGray, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
         
         
         window = UIWindow(frame: UIScreen.main.bounds)

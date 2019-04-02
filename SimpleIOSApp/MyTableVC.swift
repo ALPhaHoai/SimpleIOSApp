@@ -102,11 +102,6 @@ class MyTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
     func setupViews() {
-        navigationItem.title = "First IOS App"
-        navigationController?.navigationBar.barTintColor = UIColor(r: 0, g: 255, b: 198)
-
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGray, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
-
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TableCell.self, forCellReuseIdentifier: cellId)
