@@ -17,14 +17,45 @@ class MyTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let tableView = UITableView()
         tableView.separatorStyle = .none
         tableView.allowsSelection = true
-
-
         return tableView
     }()
 
-    var datePicker = UIDatePicker()
-    var dateField = UITextField()
-    var titlePanel: UIView = UIView()
+    let datePicker: UIDatePicker = {
+        let datePicker: UIDatePicker = UIDatePicker()
+        // Set some of UIDatePicker properties
+        datePicker.timeZone = NSTimeZone.local
+        datePicker.datePickerMode = .date
+        datePicker.backgroundColor = UIColor.white
+        return datePicker
+    }()
+    
+    var triangle: UIImageView = {
+        let triangle = UIImageView(image: #imageLiteral(resourceName: "black_triangle").resizeImage(targetSize: CGSize(width: 10, height: 10)))
+        return triangle
+    }()
+    
+    
+    var inputField: UITextField = {
+        let inputField = MyTextFieldPadding()
+        inputField.textAlignment = .right
+        inputField.text = "20/01/2019"
+        inputField.layer.borderWidth = 1
+        inputField.font = UIFont.systemFont(ofSize: 13)
+        inputField.layer.borderColor = #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 0.5)
+        return inputField
+    }()
+    
+    var titlePanel: UIView = {
+        let titlePanel = UIView()
+        return titlePanel
+    }()
+    
+    let textLabel: UILabel = {
+        let textLabel = UILabel()
+        textLabel.text = "Text Label"
+        textLabel.textColor = UIColor.black
+        return textLabel
+    }()
 
     let cellId = "cellId"
 
@@ -32,15 +63,8 @@ class MyTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationController?.navigationBar.barTintColor = UIColor.white
-
-
         setupViews()
-
         getDatafromApi()
-
-        setupTableView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -83,80 +107,62 @@ class MyTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGray, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
 
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(TableCell.self, forCellReuseIdentifier: cellId)
+        tableView.tableHeaderView = titlePanel
+        view.addSubview(tableView)
+        
+        
+        //view.addSubview(datePicker)
+        titlePanel.addSubview(textLabel)
+        titlePanel.addSubview(inputField)
+        inputField.inputView = datePicker
+        titlePanel.addSubview(triangle)
+        titlePanel.bringSubviewToFront(triangle)
+        datePicker.addTarget(self, action: #selector(TestDatePicker.datePickerValueChanged(_:)), for: .valueChanged)
 
-        //set up datePicker
-        self.view.addSubview(self.datePicker)
-        self.view.bringSubviewToFront(self.datePicker)
-        self.datePicker.datePickerMode = .date
-        self.datePicker.addTarget(self, action: #selector(MyTableVC.datePickerValueChanged(_:)), for: .valueChanged)
-        self.datePicker.snp.makeConstraints { maker in
-            maker.leading.trailing.bottom.equalToSuperview()
-            maker.height.equalToSuperview().dividedBy(3)
+        
+        tableView.snp.makeConstraints { maker in
+            maker.edges.equalToSuperview()
         }
-
-        //setUpTitlePane
         
-        //add uilabel
-        let textLabel = UILabel()
-        textLabel.text = "Text Label"
-        textLabel.textColor = UIColor.black
+    
         
-        self.titlePanel.addSubview(textLabel)
-        
-        
-        //add datepicker
-        self.dateField.text = "20/01/2019                  ▼"
-        self.dateField.inputView = self.datePicker
-        self.dateField.layer.borderWidth = 1
-        self.dateField.font = UIFont.systemFont(ofSize: 13)
-        self.dateField.layer.borderColor = #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 0.5)
-        self.titlePanel.addSubview(self.dateField)
-        
-        //        self.dateField.contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        
-        
-        self.dateField.snp.makeConstraints { maker -> Void in
-            maker.trailing.equalToSuperview()
-            maker.centerY.equalTo(self.titlePanel.snp.centerY)
+        inputField.snp.makeConstraints { maker -> Void in
+            maker.trailing.equalTo(titlePanel.snp.trailing).offset(-20)
+            maker.height.equalToSuperview()
+            maker.centerY.equalToSuperview()
         }
+        titlePanel.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 40)
+        //titlePanel.backgroundColor = .blue
+        
         textLabel.snp.makeConstraints { maker -> Void in
-            maker.trailing.equalTo(self.dateField.snp.leading).offset(-20)
-            maker.centerY.equalTo(self.titlePanel.snp.centerY)
+            maker.trailing.equalTo(inputField.snp.leading).offset(-10)
+            maker.centerY.equalToSuperview()
         }
-
-
+        
+        
+        triangle.snp.makeConstraints({ maker in
+            maker.trailing.equalTo(inputField.snp.trailing).offset(-5)
+            maker.centerY.equalToSuperview()
+        })
+        
+//        datePicker.snp.makeConstraints { maker in
+//            maker.leading.trailing.bottom.equalToSuperview()
+//            maker.height.equalToSuperview().dividedBy(3)
+//        }
     }
 
 
     @objc func datePickerValueChanged(_ sender: UIDatePicker){
         let dateFormatter: DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy hh:mm a"
+        dateFormatter.dateFormat = "MM/dd/yyyy"
         let selectedDate: String = dateFormatter.string(from: sender.date)
         print("Selected value \(selectedDate)")
-        self.dateField.text = selectedDate
+        inputField.text = selectedDate
     }
 
-    func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(TableCell.self, forCellReuseIdentifier: cellId)
-
-        view.addSubview(tableView)
-
-        tableView.tableHeaderView = self.titlePanel
-        //titlePanel.layoutMargins = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10);
-
-       
-        
-        titlePanel.snp.makeConstraints { maker in
-           maker.trailing.equalTo(view.snp.trailing).offset(-18)
-         maker.bottom.equalTo(tableView.snp.top).offset(-5)
-        }
-        
-        tableView.snp.makeConstraints { maker in
-           maker.edges.equalToSuperview()
-        }
-    }
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -165,6 +171,7 @@ class MyTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.data.count
     }
+    
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TableCell
@@ -197,6 +204,11 @@ class MyTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         vc.Order_Number.text = item["Order_Number"] as? String ?? ""
         vc.EndContactPhone.text = item["EndContactPhone"] as? String ?? ""
 
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 
 

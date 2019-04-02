@@ -18,31 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-
-
-
         let maintabBarController = MainTabBarController()
-
-
+        let uinavigation = UINavigationController(rootViewController: maintabBarController)
+        
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .white
-
-
-        let uinavigation = UINavigationController(rootViewController: maintabBarController)
-
-//        window?.rootViewController = uinavigation
+        window?.rootViewController = uinavigation
 //        window?.rootViewController = MyMapVC()
-        window?.rootViewController = TestDatePicker()
+//        window?.rootViewController = TestDatePicker()
 
 
         if let font = UIFont(name: "Helvetica", size: 18.0) {
             UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
         }
         UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -6.0)
-
-
-
         return true
     }
 

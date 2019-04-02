@@ -7,6 +7,24 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 
+    var leftVC : MyTableVC {
+        let leftVC = MyTableVC()
+        leftVC.title = "Left View"
+        leftVC.isAbnormal = false
+        leftVC.tableView.contentInset.top =  self.tabBar.frame.height + leftVC.titlePanel.frame.height + 22
+        return leftVC
+    }
+    
+    
+    var rightVC : MyTableVC {
+        let rightVC = MyTableVC()
+        rightVC.title = "Right View"
+        rightVC.isAbnormal = true
+        rightVC.tableView.contentInset.top =  self.tabBar.frame.height + rightVC.titlePanel.frame.height + 22
+        return rightVC
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewControllers = [leftVC, rightVC]
@@ -41,24 +59,6 @@ class MainTabBarController: UITabBarController {
         self.tabBar.selectionIndicatorImage = selectedUnderline
         self.tabBar.backgroundImage = unselectedUnderline
     }
-    
-    var leftVC : MyTableVC {
-        let leftVC = MyTableVC()
-        leftVC.title = "Left View"
-        leftVC.isAbnormal = false
-        leftVC.tableView.contentInset.top =  self.tabBar.frame.height + leftVC.titlePanel.frame.height + 22
-        return leftVC
-    }
-    
-    
-    var rightVC : MyTableVC {
-        let rightVC = MyTableVC()
-        rightVC.title = "Right View"
-        rightVC.isAbnormal = true
-        rightVC.tableView.contentInset.top =  self.tabBar.frame.height + rightVC.titlePanel.frame.height + 22
-        return rightVC
-    }
-
 
     func getImageWithColorPosition(color: UIColor, size: CGSize, lineSize: CGSize) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)

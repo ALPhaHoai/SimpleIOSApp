@@ -11,26 +11,30 @@ import UIKit
 
 
 class TestDatePicker: UIViewController {
+    let datePicker: UIDatePicker = {
+    let datePicker: UIDatePicker = UIDatePicker()
+    // Set some of UIDatePicker properties
+    datePicker.timeZone = NSTimeZone.local
+    datePicker.backgroundColor = UIColor.white
+    
+    // Add an event to call onDidChangeDate function when value is changed.
+    datePicker.addTarget(self, action: #selector(TestDatePicker.datePickerValueChanged(_:)), for: .valueChanged)
+    return datePicker
+    }()
+    let inputField: UITextView = {
+    let inputField = UITextView()
+    inputField.text = "2018/01/01"
+    return inputField
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        // Create a DatePicker
-        let datePicker: UIDatePicker = UIDatePicker()
-        
-        // Posiiton date picket within a view
         datePicker.frame = CGRect(x: 10, y: 50, width: self.view.frame.width, height: 200)
-        
-        // Set some of UIDatePicker properties
-        datePicker.timeZone = NSTimeZone.local
-        datePicker.backgroundColor = UIColor.white
-        
-        // Add an event to call onDidChangeDate function when value is changed.
-        datePicker.addTarget(self, action: #selector(TestDatePicker.datePickerValueChanged(_:)), for: .valueChanged)
-        
+        inputField.frame = CGRect(x: 0, y: 100, width: self.view.frame.width, height: 100)
+        inputField.inputView = datePicker
         // Add DataPicker to the view
-        self.view.addSubview(datePicker)
+        //self.view.addSubview(datePicker)
+        self.view.addSubview(inputField)
         
     }
     
@@ -47,7 +51,7 @@ class TestDatePicker: UIViewController {
         
         // Apply date format
         let selectedDate: String = dateFormatter.string(from: sender.date)
-        
+        inputField.text = selectedDate
         print("Selected value \(selectedDate)")
     }
     

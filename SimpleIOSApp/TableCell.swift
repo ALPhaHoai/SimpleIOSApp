@@ -343,25 +343,3 @@ class TableCell: UITableViewCell {
 
 }
 
-public class SimpleLine: UIView {
-
-    public init() {
-        super.init(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
-        backgroundColor = .white
-    }
-
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    public override func draw(_ rect: CGRect) {
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return
-        }
-        context.setLineWidth(4.0)
-        context.setStrokeColor(UIColor.darkGray.cgColor)
-        context.move(to: CGPoint(x: 40, y: 40))
-        context.addLine(to: CGPoint(x: 280, y: 300))
-        context.strokePath()
-    }
-}
